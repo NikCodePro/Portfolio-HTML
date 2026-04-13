@@ -4,47 +4,56 @@
 
 /* ─── DATA ─────────────────────────────────────── */
 const SERVICES = [
-  { icon:'<i class="fas fa-laptop-code"></i>', title:'Web Development',         gradient:'linear-gradient(135deg,#5B21B6,#7C3AED)',
+  { id: 'web-dev', icon:'<i class="fas fa-laptop-code"></i>', title:'Web Development',         gradient:'linear-gradient(135deg,#5B21B6,#7C3AED)',
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop',
     description:'Modern, responsive websites that engage visitors and drive conversions using cutting-edge frameworks and best practices.',
     extendedDescription:'Our web development services deliver dynamic, SEO-optimised websites that blend stunning design with robust functionality. We specialise in interactive front-end interfaces built with React, Vue, and Angular, paired with high-performance back-end systems.',
     features:['Responsive & Mobile-First Design','SEO-Friendly Architecture','Cross-Browser Compatibility','Performance Optimisation','Scalable Cloud Infrastructure'] },
 
-  { icon:'<i class="fas fa-mobile-alt"></i>', title:'Mobile App Development',  gradient:'linear-gradient(135deg,#7C3AED,#C026D3)',
+  { id: 'mobile-app', icon:'<i class="fas fa-mobile-alt"></i>', title:'Mobile App Development',  gradient:'linear-gradient(135deg,#7C3AED,#C026D3)',
+    image: 'https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=2070&auto=format&fit=crop',
     description:'Native and cross-platform mobile applications that deliver seamless, delightful user experiences across all devices.',
     extendedDescription:'Transform your app ideas into engaging, high-performance mobile solutions. Whether native iOS/Android or hybrid React Native/Flutter, our process focuses on robust security, user-centric design, and scalable performance.',
     features:['Native & Hybrid Development','User-Centric Design','Cross-Platform Compatibility','Push Notifications & Offline Mode','App Store Optimisation'] },
 
-  { icon:'<i class="fas fa-microchip"></i>', title:'Software Development',    gradient:'linear-gradient(135deg,#2D0E8A,#5B21B6)',
+  { id: 'software-dev', icon:'<i class="fas fa-microchip"></i>', title:'Software Development',    gradient:'linear-gradient(135deg,#2D0E8A,#5B21B6)',
+    image: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?q=80&w=2070&auto=format&fit=crop',
     description:'Custom software solutions tailored to your business workflows — clean, efficient, maintainable, and built to scale.',
     extendedDescription:'Our engineers craft bespoke software using agile methodologies and modern tech stacks to deliver secure, scalable, and efficient systems that fuel growth and operational efficiency.',
     features:['Custom Business Applications','Agile Development Sprints','Scalable & Secure Architecture','Cloud & API Integration','Comprehensive Documentation'] },
 
-  { icon:'<i class="fas fa-check-double"></i>', title:'Software Testing & QA',   gradient:'linear-gradient(135deg,#C026D3,#D946EF)',
+  { id: 'qa-testing', icon:'<i class="fas fa-check-double"></i>', title:'Software Testing & QA',   gradient:'linear-gradient(135deg,#C026D3,#D946EF)',
+    image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop',
     description:'Comprehensive QA services to ensure your software is bug-free, secure, and delivers an exceptional user experience.',
     extendedDescription:'Our QA team employs manual and automated testing strategies to detect and resolve issues early. From functional testing to penetration testing, we ensure your product is release-ready.',
     features:['Functional & Regression Testing','Performance & Load Testing','Security & Penetration Testing','Automated Test Suites','User Acceptance Testing'] },
 
-  { icon:'<i class="fas fa-project-diagram"></i>', title:'Product Management',       gradient:'linear-gradient(135deg,#4C1D95,#7C3AED)',
+  { id: 'prod-mgmt', icon:'<i class="fas fa-project-diagram"></i>', title:'Product Management',       gradient:'linear-gradient(135deg,#4C1D95,#7C3AED)',
+    image: 'https://images.unsplash.com/photo-1531403009284-440f080d1e12?q=80&w=2070&auto=format&fit=crop',
     description:'Strategic product planning and execution to bring your vision to market with maximum impact and measurable ROI.',
     extendedDescription:'Our product management services combine market analysis, agile methodologies, and iterative development to transform innovative ideas into market-ready products that users love.',
     features:['Product Strategy & Roadmapping','User Research & Journey Mapping','MVP Development & Validation','Agile Product Development','Analytics & Product Optimisation'] },
 
-  { icon:'<i class="fas fa-wand-magic-sparkles"></i>', title:'UI/UX Design',             gradient:'linear-gradient(135deg,#6B1A9E,#C026D3)',
+  { id: 'ui-ux', icon:'<i class="fas fa-wand-magic-sparkles"></i>', title:'UI/UX Design',             gradient:'linear-gradient(135deg,#6B1A9E,#C026D3)',
+    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2000&auto=format&fit=crop',
     description:'User-centred design that creates intuitive, visually stunning experiences while maintaining brand consistency.',
     extendedDescription:'Our creative team crafts visually breathtaking interfaces and seamless user experiences — from initial wireframes to polished design systems and interactive prototypes.',
     features:['User Interface & Visual Design','UX Research & Usability Testing','Wireframing & Prototyping','Design Systems & Style Guides','Accessibility Compliance (WCAG)'] },
 
-  { icon:'<i class="fas fa-cart-shopping"></i>', title:'E-commerce Solutions',     gradient:'linear-gradient(135deg,#7C3AED,#9B1DB0)',
+  { id: 'ecommerce', icon:'<i class="fas fa-cart-shopping"></i>', title:'E-commerce Solutions',     gradient:'linear-gradient(135deg,#7C3AED,#9B1DB0)',
+    image: 'https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=2070&auto=format&fit=crop',
     description:'End-to-end e-commerce development with seamless payment processing, inventory management, and superior customer experience.',
     extendedDescription:'We build secure, scalable e-commerce platforms integrating payment gateways, efficient inventory management, and powerful customer analytics to drive sales.',
     features:['Custom E-commerce Platforms','Optimised Cart & Checkout Flow','Payment Gateway Integration','Inventory & Order Management','Customer Analytics & Personalisation'] },
 
-  { icon:'<i class="fas fa-magnifying-glass-chart"></i>', title:'SEO & Digital Marketing',  gradient:'linear-gradient(135deg,#2D0E8A,#7C3AED)',
+  { id: 'seo-marketing', icon:'<i class="fas fa-magnifying-glass-chart"></i>', title:'SEO & Digital Marketing',  gradient:'linear-gradient(135deg,#2D0E8A,#7C3AED)',
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=2426&auto=format&fit=crop',
     description:'Data-driven strategies to improve your search rankings and maximise online visibility and qualified traffic.',
     extendedDescription:'Our SEO and digital marketing experts use advanced analytics and proven techniques to elevate your brand\'s visibility, acquire targeted traffic, and increase conversions.',
     features:['Keyword Research & On-page SEO','Technical SEO Audits','Content Marketing Strategy','Link Building Campaigns','Analytics & Performance Reporting'] },
 
-  { icon:'<i class="fas fa-hashtag"></i>', title:'Social Media Marketing',   gradient:'linear-gradient(135deg,#5B21B6,#C026D3)',
+  { id: 'social-media', icon:'<i class="fas fa-hashtag"></i>', title:'Social Media Marketing',   gradient:'linear-gradient(135deg,#5B21B6,#C026D3)',
+    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=1974&auto=format&fit=crop',
     description:'Engaging social media campaigns that build brand awareness, foster loyalty, and grow your community.',
     extendedDescription:'We create tailored strategies that drive engagement, enhance reach, and build strong customer relationships through compelling content and data-driven insight.',
     features:['Content Strategy & Creation','Community Management','Performance Analytics','Influencer Partnership','Paid Social Campaigns'] },
@@ -87,20 +96,22 @@ const EXPERTISE = [
 ];
 
 const TECH_STACK = [
-  { name:'Node.js',    icon:'<svg viewBox="0 0 448 512"><path fill="currentColor" d="M224 508c-6.7 0-13.5-1.8-19.4-5.2l-61.7-36.5c-9.2-5.2-4.7-7-1.7-8 12.3-4.3 14.8-5.2 27.9-12.7 1.4-.8 3.2-.5 4.6.4l47.4 28.1c1.7 1 4.1 1 5.7 0l184.7-106.6c1.7-1 2.8-3 2.8-5V149.3c0-2.1-1.1-4-2.9-5.1L226.8 37.7c-1.7-1-4-1-5.7 0L36.6 144.3c-1.8 1-2.9 3-2.9 5.1v213.1c0 2 1.1 4 2.9 4.9l50.6 29.2c27.5 13.7 44.3-2.4 44.3-18.7V167.5c0-3 2.4-5.3 5.4-5.3h23.4c2.9 0 5.4 2.3 5.4 5.3V378c0 36.6-20 57.6-54.7 57.6-10.7 0-19.1 0-42.5-11.6l-48.4-27.9C8.1 389.2.7 376.3.7 362.4V149.3c0-13.8 7.4-26.8 19.4-33.7L204.6 9c11.7-6.6 27.2-6.6 38.8 0l184.7 106.7c12 6.9 19.4 19.8 19.4 33.7v213.1c0 13.8-7.4 26.7-19.4 33.7L243.4 502.8c-5.9 3.4-12.6 5.2-19.4 5.2z"/></svg>' },
-  { name:'Python',     icon:'🐍' },
-  { name:'React',      icon:'⚛️' },
-  { name:'Java',       icon:'☕' },
-  { name:'TensorFlow', icon:'🧠' },
-  { name:'Django',     icon:'🎸' },
-  { name:'Flutter',    icon:'🦋' },
-  { name:'C++',        icon:'🔧' },
-  { name:'PHP',        icon:'🐘' },
-  { name:'Docker',     icon:'🐳' },
-  { name:'MongoDB',    icon:'🍃' },
-  { name:'MySQL',      icon:'🗄️' },
-  { name:'Firebase',   icon:'🔥' },
-  { name:'Blockchain', icon:'⛓️' },
+  { name:'Python',      color:'#3776AB', icon:'<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"/>' },
+  { name:'JavaScript',  color:'#F7DF1E', icon:'<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"/>' },
+  { name:'React',       color:'#61DAFB', icon:'<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"/>' },
+  { name:'Django',      color:'#092E20', icon:'<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/django/django-plain.svg" alt="Django"/>' },
+  { name:'Java',        color:'#ED8B00', icon:'<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg" alt="Java"/>' },
+  { name:'PHP',         color:'#777BB4', icon:'<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" alt="PHP"/>' },
+  { name:'Node.js',     color:'#339933', icon:'<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"/>' },
+  { name:'TypeScript',  color:'#3178C6', icon:'<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript"/>' },
+  { name:'Flutter',     color:'#02569B', icon:'<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter"/>' },
+  { name:'Docker',      color:'#2496ED', icon:'<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"/>' },
+  { name:'MongoDB',     color:'#47A248', icon:'<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mongodb/mongodb-original.svg" alt="MongoDB"/>' },
+  { name:'MySQL',       color:'#4479A1', icon:'<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" alt="MySQL"/>' },
+  { name:'TensorFlow',  color:'#FF6F00', icon:'<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/tensorflow/tensorflow-original.svg" alt="TensorFlow"/>' },
+  { name:'Firebase',    color:'#FFCA28', icon:'<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/firebase/firebase-plain.svg" alt="Firebase"/>' },
+  { name:'C++',         color:'#00599C', icon:'<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/cplusplus/cplusplus-original.svg" alt="C++"/>' },
+  { name:'Kubernetes',  color:'#326CE5', icon:'<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/kubernetes/kubernetes-plain.svg" alt="Kubernetes"/>' },
 ];
 
 const FAQ_ITEMS = [
@@ -116,8 +127,8 @@ const SHOWCASE_CATEGORIES = ['All','Web Application','Mobile Application','Deskt
 
 const FOOTER_LINKS = [
   { title:'Navigation', links:[{name:'Home',href:'#home'},{name:'About',href:'#about'},{name:'Services',href:'#services'},{name:'Showcase',href:'#showcase'},{name:'Contact',href:'#contact'}] },
-  { title:'Services',   links:[{name:'Web Development',href:'#services'},{name:'Mobile Apps',href:'#services'},{name:'UI/UX Design',href:'#services'},{name:'SEO & Marketing',href:'#services'}] },
-  { title:'Contact',    links:[{name:'hello@techneural.io',href:'mailto:hello@techneural.io'},{name:'+1 (800) 123-4567',href:'tel:+18001234567'},{name:'Get a Quote',href:'#contact'}] },
+  { title:'Services',   links:[{name:'Web Development',svc:'web-dev'},{name:'Mobile Apps',svc:'mobile-app'},{name:'UI/UX Design',svc:'ui-ux'},{name:'SEO & Marketing',svc:'seo-marketing'}] },
+  { title:'Contact',    links:[{name:'the.techneural@gmail.com',href:'mailto:the.techneural@gmail.com'},{name:'+91 9193257838',href:'tel:+919193257838'},{name:'Get a Quote',href:'#contact'}] },
 ];
 
 
@@ -132,6 +143,7 @@ let selectedFilter = 'All';
 /* ─── INIT ──────────────────────────────────────── */
 document.addEventListener('DOMContentLoaded', () => {
   buildHeroBubbles();
+  buildAboutParticles();
   buildServicesGrid();
   buildCarousel();
   buildExpertise();
@@ -141,6 +153,8 @@ document.addEventListener('DOMContentLoaded', () => {
   buildServiceCards();
   buildFooters();
   buildFAQ();
+  buildAboutParticles();
+  buildServicesParticles();
   initScrollHandlers();
   showPage('home');
   startWelcomeToast();
@@ -232,6 +246,50 @@ function buildHeroBubbles() {
 }
 
 
+/* ─── ABOUT PARTICLES ───────────────────────────── */
+function buildAboutParticles() {
+  const container = document.getElementById('aboutParticles');
+  if (!container) return;
+  for (let i = 0; i < 30; i++) {
+    const dot = document.createElement('div');
+    const size = Math.random() * 4 + 1.5;
+    const duration = 12 + Math.random() * 18;
+    const delay = -Math.random() * duration;
+    dot.className = 'about-particle';
+    dot.style.cssText = `
+      width:${size}px; height:${size}px;
+      left:${Math.random() * 100}%;
+      bottom:${Math.random() * 20}%;
+      animation-duration:${duration}s;
+      animation-delay:${delay}s;
+      opacity:${0.3 + Math.random() * 0.5};
+    `;
+    container.appendChild(dot);
+  }
+}
+
+function buildServicesParticles() {
+  const container = document.getElementById('servicesParticles');
+  if (!container) return;
+  for (let i = 0; i < 30; i++) {
+    const dot = document.createElement('div');
+    const size = Math.random() * 4 + 1.5;
+    const duration = 12 + Math.random() * 18;
+    const delay = -Math.random() * duration;
+    dot.className = 'about-particle';
+    dot.style.cssText = `
+      width:${size}px; height:${size}px;
+      left:${Math.random() * 100}%;
+      bottom:${Math.random() * 20}%;
+      animation-duration:${duration}s;
+      animation-delay:${delay}s;
+      opacity:${0.3 + Math.random() * 0.5};
+    `;
+    container.appendChild(dot);
+  }
+}
+
+
 /* ─── SERVICES PREVIEW GRID (Home) ─────────────── */
 function buildServicesGrid() {
   const grid = document.getElementById('servicesGrid');
@@ -246,7 +304,7 @@ function buildServicesGrid() {
         <h3>${s.title}</h3>
         <p>${s.description}</p>
       </div>`;
-    div.onclick = () => openServiceModal(s);
+    div.onclick = () => viewServiceDetail(s.id);
     grid.appendChild(div);
   });
 }
@@ -266,7 +324,7 @@ function buildServiceCards() {
       <h3>${s.title}</h3>
       <p>${s.description}</p>
       <div class="svc-arrow">→</div>`;
-    div.onclick = () => openServiceModal(s);
+    div.onclick = () => viewServiceDetail(s.id);
     grid.appendChild(div);
   });
 }
@@ -297,10 +355,68 @@ function openServiceModal(s) {
   document.body.style.overflow = 'hidden';
 }
 
-function closeServiceModal(e) {
-  if (e && e.target !== document.getElementById('serviceModal')) return;
-  document.getElementById('serviceModal').classList.remove('open');
-  document.body.style.overflow = '';
+/* ─── SERVICE DETAIL PAGE ───────────────────────── */
+function viewServiceDetail(serviceId) {
+  const s = SERVICES.find(sv => sv.id === serviceId);
+  if (!s) return;
+
+  const content = document.getElementById('serviceDetailPageContent');
+  if (!content) return;
+
+  content.innerHTML = `
+    <section class="svc-detail-hero">
+      <div class="svc-detail-hero-img">
+        <img src="${s.image}" alt="${s.title}" />
+      </div>
+      <div class="svc-detail-hero-overlay" style="background:${s.gradient}"></div>
+      <div class="container text-center svc-detail-hero-content reveal">
+        <div class="svc-detail-icon">${s.icon}</div>
+        <h1>${s.title}</h1>
+        <p>${s.description}</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="svc-detail-content-wrap">
+          <div class="svc-detail-text reveal">
+            <h2>Experience Engineering <span class="gradient-text">Excellence</span></h2>
+            <p>${s.extendedDescription}</p>
+            <div class="svc-detail-features">
+              ${s.features.map(f => `
+                <div class="svc-detail-feature">
+                  <span class="feat-dot" style="background:${s.gradient}"></span>
+                  <span>${f}</span>
+                </div>
+              `).join('')}
+            </div>
+            <button class="btn-brand mt-8" onclick="navigate('contact')">Get a Free Quote for ${s.title}</button>
+          </div>
+          <div class="svc-detail-infographic reveal">
+            <div class="info-card-inner" style="border-color:rgba(255,255,255,0.1)">
+               <div class="info-icon" style="background:${s.gradient}">✨</div>
+               <h3>${s.title} Specialized</h3>
+               <p>We use industry-leading tools and 10+ years of expertise to deliver world-class ${s.title} results for our clients.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section bg-section">
+      <div class="container text-center reveal">
+        <div class="badge">🚀 Let's Build Something Great</div>
+        <h2>Ready to transform your business?</h2>
+        <p class="max-w-3xl mb-8">Partner with us to leverage ${s.title} and drive your digital success forward. Our team is ready to help you innovate and scale.</p>
+        <div class="hero-btns" style="justify-content:center">
+          <button class="btn-primary" onclick="navigate('contact')">Start Your Project</button>
+          <button class="btn-outline" onclick="navigate('services')">All Services</button>
+        </div>
+      </div>
+    </section>
+  `;
+
+  navigate('service-detail');
 }
 
 
@@ -408,11 +524,11 @@ function buildTechGrid() {
     div.className = 'tech-card reveal';
     div.style.animationDelay = (i * 0.05) + 's';
     div.innerHTML = `
-      <div class="tech-icon-bg">
-        ${t.icon.startsWith('<') ? t.icon : `<span>${t.icon}</span>`}
+      <div class="tech-icon-bg" style="--tech-color:${t.color}">
+        ${t.icon}
       </div>
       <h3>${t.name}</h3>
-      <div class="tech-hover-bar"></div>
+      <div class="tech-hover-bar" style="background:${t.color};opacity:.85"></div>
     `;
     grid.appendChild(div);
   });
@@ -505,7 +621,7 @@ function toggleFAQ(idx) {
 
 /* ─── FOOTER BUILDER ────────────────────────────── */
 function buildFooters() {
-  ['home','about','services','showcase','contact'].forEach(page => {
+  ['home','about','services','showcase','contact','service-detail'].forEach(page => {
     const el = document.getElementById('footer-' + page);
     if (!el) return;
     el.innerHTML = `
@@ -521,40 +637,45 @@ function buildFooters() {
             <div class="footer-newsletter">
               <h4>Stay in the Loop</h4>
               <div class="footer-newsletter-row">
-                <input type="email" placeholder="your@email.com" id="newsletterEmail-${page}" />
-                <button onclick="subscribeNewsletter('${page}')">Subscribe</button>
+                <input type="email" placeholder="Your Email"/>
+                <button>Join</button>
               </div>
             </div>
           </div>
+
+          <!-- Quick Links -->
           ${FOOTER_LINKS.map(col => `
-          <div class="footer-col">
-            <h3>${col.title}</h3>
-            <ul>${col.links.map(l => `<li><a href="${l.href}" onclick="handleFooterLink(event,'${l.href}')">${l.name}</a></li>`).join('')}</ul>
-          </div>`).join('')}
+            <div class="footer-col">
+              <h3>${col.title}</h3>
+              <ul>
+                ${col.links.map(link => {
+                  let action = '';
+                  if (link.svc) action = `onclick="viewServiceDetail('${link.svc}')" style="cursor:pointer"`;
+                  else if (link.href) action = `href="${link.href}" onclick="handleFooterLink(event,'${link.href}')"`;
+                  return `<li><a ${action}>${link.name}</a></li>`;
+                }).join('')}
+              </ul>
+            </div>
+          `).join('')}
         </div>
+
         <div class="footer-bottom">
           <div class="footer-socials">
-            <a class="footer-social" href="https://www.linkedin.com/company/107535474/" target="_blank" rel="noopener" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
-            <a class="footer-social" href="https://www.instagram.com/the.techneural/" target="_blank" rel="noopener" title="Instagram"><i class="fab fa-instagram"></i></a>
-            <a class="footer-social" href="https://www.facebook.com/profile.php?id=61573328364639" target="_blank" rel="noopener" title="Facebook"><i class="fab fa-facebook-f"></i></a>
-            <a class="footer-social" href="https://github.com" target="_blank" rel="noopener" title="GitHub"><i class="fab fa-github"></i></a>
-            <a class="footer-social" href="mailto:hello@techneural.io" title="Email Us"><i class="fas fa-envelope"></i></a>
+            <a href="https://www.linkedin.com/company/107535474/" target="_blank" class="footer-social"><i class="fab fa-linkedin-in"></i></a>
+            <a href="https://www.facebook.com/profile.php?id=61573328364639" target="_blank" class="footer-social"><i class="fab fa-facebook-f"></i></a>
+            <a href="https://www.github.com" target="_blank" class="footer-social"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/the.techneural/" target="_blank" class="footer-social"><i class="fab fa-instagram"></i></a>
           </div>
-          <p class="footer-copyright">© ${new Date().getFullYear()} techNeural. All rights reserved. Built with passion.</p>
+          <div class="footer-copyright">
+            &copy; 2024 techNeural Solutions. All rights reserved.
+          </div>
+          <button class="footer-scroll-btn" onclick="window.scrollTo({top:0,behavior:'smooth'})">
+            <i class="fas fa-chevron-up"></i>
+          </button>
         </div>
       </div>
     `;
   });
-}
-
-function subscribeNewsletter(page) {
-  const input = document.getElementById('newsletterEmail-' + page);
-  if (input && input.value && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value)) {
-    showToast('🎉 You\'re subscribed! Welcome to the techNeural community.');
-    input.value = '';
-  } else {
-    showToast('⚠️ Please enter a valid email address.');
-  }
 }
 
 function handleFooterLink(e, href) {

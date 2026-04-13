@@ -173,11 +173,36 @@
     <!-- Hero -->
     <section class="about-hero">
       <div class="about-hero-bg"></div>
+      <div class="about-hero-particles" id="aboutParticles"></div>
+      <div class="about-blob about-blob-1"></div>
+      <div class="about-blob about-blob-2"></div>
+      <div class="about-blob about-blob-3"></div>
       <div class="container text-center about-hero-content fade-up">
-        <div class="badge">✨ Our Story</div>
-        <h1>We Are <span class="gradient-text">Innovators</span></h1>
-        <p>Discover our journey, our mission, and the technology that powers our vision to transform the digital landscape, one business at a time.</p>
-        <button class="btn-white-round" onclick="openStoryModal()">Read Our Story →</button>
+        <div class="about-hero-badge"><span class="about-hero-dot"></span> Trusted IT Partner Since 2014</div>
+        <h1>We Are <span class="gradient-text">Innovators</span><br/>Building the Digital Future</h1>
+        <p>An elite team of engineers, designers, and strategists crafting world-class digital solutions that transform businesses and create lasting impact across the globe.</p>
+        <div class="about-hero-actions">
+          <button class="btn-white-round" onclick="openStoryModal()">Read Our Story →</button>
+          <button class="btn-outline" onclick="navigate('contact')">Work With Us</button>
+        </div>
+        <div class="about-hero-stats">
+          <div class="about-stat">
+            <div class="about-stat-num">150<span>+</span></div>
+            <div class="about-stat-label">Clients Worldwide</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-num">200<span>+</span></div>
+            <div class="about-stat-label">Projects Delivered</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-num">10<span>+</span></div>
+            <div class="about-stat-label">Countries Reached</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-num">98<span>%</span></div>
+            <div class="about-stat-label">Client Satisfaction</div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -312,14 +337,32 @@
     <!-- Hero -->
     <section class="services-hero">
       <div class="services-hero-bg"></div>
-      <div class="blob b1"></div>
-      <div class="blob b2"></div>
-      <div class="blob b3"></div>
+      <div class="about-hero-particles" id="servicesParticles"></div>
+      <div class="about-blob about-blob-1"></div>
+      <div class="about-blob about-blob-2"></div>
+      <div class="about-blob about-blob-3"></div>
       <div class="container text-center services-hero-content fade-up">
-        <div class="badge-outline">Innovative Solutions for the Digital Age</div>
-        <h1>Transform Your Vision<br/>Into <span class="gradient-text">Digital Excellence</span></h1>
-        <p>Discover our comprehensive range of services designed to elevate your business, accelerate growth, and future-proof your operations.</p>
-        <button class="btn-white-round mt-8" onclick="navigate('contact')">Get in Touch <svg viewBox="0 0 24 24" style="width:15px;height:15px;display:inline;vertical-align:middle;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></button>
+        <div class="about-hero-badge"><span class="about-hero-dot"></span> Specialized Tech Solutions</div>
+        <h1>Transform Your <span class="gradient-text">Vision</span><br/>Into Digital Reality</h1>
+        <p>Discover our comprehensive range of services designed to elevate your business, accelerate growth, and future-proof your digital operations.</p>
+        <div class="about-hero-actions">
+          <button class="btn-white-round" onclick="navigate('contact')">Get a Free Quote →</button>
+          <button class="btn-outline" onclick="window.scrollTo({top:800,behavior:'smooth'})">Explore Services</button>
+        </div>
+        <div class="about-hero-stats">
+          <div class="about-stat">
+            <div class="about-stat-num">98<span>%</span></div>
+            <div class="about-stat-label">Client Success</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-num">24<span>/7</span></div>
+            <div class="about-stat-label">Expert Support</div>
+          </div>
+          <div class="about-stat">
+            <div class="about-stat-num">100<span>%</span></div>
+            <div class="about-stat-label">Secure Delivery</div>
+          </div>
+        </div>
       </div>
     </section>
 
@@ -336,7 +379,7 @@
     </section>
 
     <!-- Process Section -->
-    <section class="section process-section">
+    <!-- <section class="section process-section">
       <div class="container relative">
         <div class="section-header reveal">
           <div class="badge-purple">🗺️ Our Approach</div>
@@ -383,6 +426,48 @@
           </div>
         </div>
       </div>
+    </section> -->
+
+    <!-- Why Choose Us -->
+    <section class="section bg-section relative overflow-hidden">
+      <div class="section-overlay-img"></div>
+      <div class="container relative z-10">
+        <div class="section-header reveal">
+          <div class="badge-green">💎 Our Value</div>
+          <h2>Why Partner with <span class="gradient-text">techNeural</span>?</h2>
+          <p>We combine deep technical expertise with strategic business insight to deliver results that truly matter.</p>
+        </div>
+        <div class="value-proposition-grid">
+           <div class="value-card reveal">
+              <div class="value-icon-wrap" style="background: linear-gradient(135deg,rgba(124, 58, 237, 0.2),rgba(192, 38, 211, 0.2))">
+                <i class="fas fa-bolt"></i>
+              </div>
+              <h3>Extreme Performance</h3>
+              <p>We build lightweight, high-speed solutions optimized for maximum conversion and user retention.</p>
+           </div>
+           <div class="value-card reveal" style="animation-delay:.1s">
+              <div class="value-icon-wrap" style="background: linear-gradient(135deg,rgba(192, 38, 211, 0.2),rgba(124, 58, 237, 0.2))">
+                <i class="fas fa-shield-halved"></i>
+              </div>
+              <h3>Enterprise Security</h3>
+              <p>Standardized security protocols and periodic audits to keep your infrastructure and user data safe.</p>
+           </div>
+           <div class="value-card reveal" style="animation-delay:.2s">
+              <div class="value-icon-wrap" style="background: linear-gradient(135deg,rgba(124, 58, 237, 0.2),rgba(192, 38, 211, 0.2))">
+                <i class="fas fa-handshake-angle"></i>
+              </div>
+              <h3>Long-term Partnership</h3>
+              <p>We don't just launch and leave. We partner with you for continuous digital growth and maintenance.</p>
+           </div>
+           <div class="value-card reveal" style="animation-delay:.3s">
+              <div class="value-icon-wrap" style="background: linear-gradient(135deg,rgba(192, 38, 211, 0.2),rgba(124, 58, 237, 0.2))">
+                <i class="fas fa-chart-line"></i>
+              </div>
+              <h3>Data Intelligence</h3>
+              <p>Every engineering and design decision is backed by analytics and rigorous user research.</p>
+           </div>
+        </div>
+      </div>
     </section>
 
     <!-- CTA -->
@@ -396,6 +481,13 @@
 
     <footer class="footer" id="footer-services"></footer>
   </div><!-- /services -->
+
+
+  <!-- SERVICE DETAIL PAGE (Dynamic) -->
+  <div id="page-service-detail" class="page">
+    <div id="serviceDetailPageContent"></div>
+    <div class="footer" id="footer-service-detail"></div>
+  </div>
 
 
   <!-- SHOWCASE PAGE -->
@@ -430,90 +522,59 @@
       </div>
     </section>
 
-    <!-- Info Cards -->
-    <section class="section bg-section">
-      <div class="container">
-        <div class="contact-info-grid">
-          <div class="contact-info-card glass-card reveal">
-            <div class="contact-icon-wrap">📧</div>
-            <h3>Email Us</h3>
-            <p>hello@techneural.io</p>
-            <p>support@techneural.io</p>
+    <!-- Contact Main Section -->
+    <section class="section relative overflow-hidden">
+      <div class="section-overlay-img" style="opacity: 0.03"></div>
+      <div class="container relative z-10">
+        <div class="contact-main-grid">
+          <div class="contact-info-panel reveal">
+            <div class="badge-outline mb-4">📍 CONNECT WITH US</div>
+            <h2 class="mb-4">Ready to build something <span class="gradient-text">exceptional</span>?</h2>
+            <p class="mb-8 text-muted">We combine human-centered design with world-class engineering to build products that users love and businesses thrive on.</p>
+            <div class="contact-methods">
+              <div class="method-card">
+                <div class="method-icon"><i class="fas fa-envelope"></i></div>
+                <div><h4>Email Us</h4><a href="mailto:the.techneural@gmail.com">the.techneural@gmail.com</a></div>
+              </div>
+              <div class="method-card">
+                <div class="method-icon"><i class="fab fa-whatsapp"></i></div>
+                <div><h4>WhatsApp</h4><a href="https://wa.me/919193257838" target="_blank">+91 9193257838</a></div>
+              </div>
+              <div class="method-card">
+                <div class="method-icon"><i class="fas fa-clock"></i></div>
+                <div><h4>Support Hours</h4><p>Mon - Sat: 9:00 AM - 7:00 PM GMT</p></div>
+              </div>
+            </div>
+            <div class="contact-social-pills mt-8">
+              <a href="https://www.facebook.com/profile.php?id=61573328364639" target="_blank" class="social-pill fb"><i class="fab fa-facebook-f"></i> Facebook</a>
+              <a href="https://www.instagram.com/the.techneural/" target="_blank" class="social-pill ig"><i class="fab fa-instagram"></i> Instagram</a>
+              <a href="https://www.linkedin.com/company/107535474/" target="_blank" class="social-pill li"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+            </div>
           </div>
-          <div class="contact-info-card glass-card reveal" style="animation-delay:.1s">
-            <div class="contact-icon-wrap">📞</div>
-            <h3>Call Us</h3>
-            <p>+1 (800) 123-4567</p>
-            <p>+44 7436 900 601</p>
-          </div>
-          <div class="contact-info-card glass-card reveal" style="animation-delay:.2s">
-            <div class="contact-icon-wrap">🕐</div>
-            <h3>Business Hours</h3>
-            <p>Mon – Fri: 9:00 – 18:00 GMT</p>
-            <p>Sat – Sun: Closed</p>
-          </div>
-          <div class="contact-info-card glass-card reveal" style="animation-delay:.3s">
-            <div class="contact-icon-wrap">📍</div>
-            <h3>Location</h3>
-            <p>Remote-first company</p>
-            <p>Serving clients globally</p>
+          <div class="contact-form-container reveal" style="animation-delay:.2s">
+            <div class="contact-glass-form">
+              <div class="form-header"><h3>Send us a Message</h3><p>We typically respond within 12 hours.</p></div>
+              <form id="contactForm" onsubmit="handleContactSubmit(event)">
+                <div class="form-group-custom">
+                  <label>Full Name</label>
+                  <div class="input-wrap"><i class="fas fa-user"></i><input type="text" id="cName" placeholder="Your Name" required /></div>
+                </div>
+                <div class="form-group-custom">
+                  <label>Email Address</label>
+                  <div class="input-wrap"><i class="fas fa-envelope"></i><input type="email" id="cEmail" placeholder="your@email.com" required /></div>
+                </div>
+                <div class="form-group-custom">
+                  <label>Project Details</label>
+                  <textarea id="cMessage" rows="5" placeholder="Tell us about your vision..." required></textarea>
+                </div>
+                <button type="submit" class="btn-brand w-full mt-4">Send Message <i class="fas fa-paper-plane ml-2"></i></button>
+              </form>
+            </div>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact Form -->
-    <section class="section">
-      <div class="container">
-        <div class="section-header">
-          <div class="badge">✉️ Send a Message</div>
-          <h2>Let's Start a <span class="gradient-text">Conversation</span></h2>
-          <p>Fill in the form below and our team will get back to you within 24 hours.</p>
-        </div>
-        <div class="contact-form-wrap reveal">
-          <form id="contactForm" onsubmit="handleContactSubmit(event)">
-            <div class="form-row">
-              <div class="form-group">
-                <label for="cName">Full Name</label>
-                <input type="text" id="cName" name="name" placeholder="Your full name" required />
-                <span class="form-error" id="errName"></span>
-              </div>
-              <div class="form-group">
-                <label for="cEmail">Email Address</label>
-                <input type="email" id="cEmail" name="email" placeholder="your@email.com" required />
-                <span class="form-error" id="errEmail"></span>
-              </div>
-            </div>
-            <div class="form-row">
-              <div class="form-group">
-                <label for="cPhone">Phone Number</label>
-                <input type="tel" id="cPhone" name="phone" placeholder="+1 (000) 000-0000" />
-              </div>
-              <div class="form-group">
-                <label for="cSubject">Subject</label>
-                <input type="text" id="cSubject" name="subject" placeholder="How can we help?" />
-              </div>
-            </div>
-            <div class="form-group">
-              <label for="cService">Service Interested In</label>
-              <input type="text" id="cService" name="service" placeholder="e.g. Web Development, Mobile App, SEO…" />
-            </div>
-            <div class="form-group">
-              <label for="cMessage">Message</label>
-              <textarea id="cMessage" name="message" rows="5" placeholder="Tell us about your project, goals, and timeline…" required></textarea>
-              <span class="form-error" id="errMessage"></span>
-            </div>
-            <button type="submit" class="btn-gradient-full" id="submitBtn">
-              <span id="btnText">Send Message →</span>
-              <span id="btnLoading" style="display:none">Sending… ⏳</span>
-            </button>
-          </form>
-          <div class="form-success" id="formSuccess" style="display:none">
-            🎉 Message sent successfully! We'll get back to you within 24 hours.
-          </div>
-        </div>
-      </div>
-    </section>
 
     <!-- FAQ -->
     <section class="section bg-section">
