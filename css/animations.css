@@ -1,0 +1,104 @@
+/* =====================================================
+   TechNeural — Animations
+   Keyframes + GSAP initial (pre-reveal) states
+   ===================================================== */
+
+/* ---------- Looping keyframes ---------- */
+@keyframes pulse-dot {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(0.6);
+    opacity: 0.5;
+  }
+}
+
+@keyframes bob {
+  0%,
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+  50% {
+    transform: translateX(-50%) translateY(8px);
+  }
+}
+
+/* Soft gradient drift for hero glows (used if GSAP unavailable) */
+@keyframes drift {
+  0% {
+    transform: translate(0, 0) scale(1);
+  }
+  100% {
+    transform: translate(40px, 30px) scale(1.12);
+  }
+}
+.hero__glow--1 {
+  animation: drift 16s ease-in-out infinite alternate;
+}
+.hero__glow--2 {
+  animation: drift 20s ease-in-out infinite alternate-reverse;
+}
+
+/* =====================================================
+   Pre-reveal states (only while GSAP is loading/active)
+   We hide via CSS then animate to visible with gsap.to(),
+   so there is no flash and no gsap.from() "stuck" bug.
+   If GSAP fails to load, the inline head script removes
+   .gsap-loading on window.load and everything shows.
+   ===================================================== */
+.gsap-loading [data-reveal] {
+  opacity: 0;
+  transform: translateY(46px);
+}
+.gsap-loading [data-stagger] > * {
+  opacity: 0;
+  transform: translateY(40px);
+}
+
+/* Hero elements get their own choreographed entrance */
+.gsap-loading .hero-eyebrow,
+.gsap-loading .hero-sub,
+.gsap-loading .hero-actions {
+  opacity: 0;
+  transform: translateY(24px);
+}
+.gsap-loading .hero-headline {
+  opacity: 0;
+}
+.gsap-loading .hero-visual {
+  opacity: 0;
+  transform: translateY(40px) scale(0.96);
+}
+
+/* SplitType lines wrapper — keep overflow tidy during line reveal */
+.hero-headline .line {
+  overflow: hidden;
+  display: block;
+}
+
+/* =====================================================
+   Reduced motion — respect user preference
+   ===================================================== */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+    scroll-behavior: auto !important;
+  }
+  .gsap-loading [data-reveal],
+  .gsap-loading [data-stagger] > *,
+  .gsap-loading .hero-eyebrow,
+  .gsap-loading .hero-sub,
+  .gsap-loading .hero-actions,
+  .gsap-loading .hero-headline,
+  .gsap-loading .hero-visual {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

@@ -3,38 +3,50 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>techNeural – Transforming Ideas Into Digital Excellence</title>
-    <link rel="icon" type="image/png" href="icon.png" />
-    <link rel="apple-touch-icon" href="icon.png" />
+    <title>TechNeural — AI, Web & Growth Solutions for Modern Business</title>
     <meta
       name="description"
-      content="techNeural delivers innovative IT solutions — web development, mobile apps, UI/UX, SEO, and more — to propel your business forward in the digital landscape."
+      content="TechNeural builds high-performance websites, AI automation, chatbots, SEO and growth systems for ambitious businesses. Premium engineering, measurable results."
     />
+    <meta name="theme-color" content="#f6f4fc" />
     <meta
-      name="keywords"
-      content="web development, mobile app, IT solutions, UI/UX design, digital marketing, SEO, software development, techNeural"
+      property="og:title"
+      content="TechNeural — AI, Web & Growth Solutions"
     />
-    <meta property="og:title" content="techNeural – Digital Excellence" />
     <meta
       property="og:description"
-      content="Innovative IT solutions tailored to take your business to the next level."
+      content="Premium websites, AI automation and growth systems for modern business."
     />
     <meta property="og:type" content="website" />
     <meta
       name="google-site-verification"
       content="82hmnJbEo5Rtg18iIf4LKMA_FxTPvx9a1-Bv7FECCRk"
     />
+    <link rel="icon" type="image/png" href="assets/icon.png" />
+    <link rel="apple-touch-icon" href="assets/icon.png" />
+
+    <script>
+      document.documentElement.classList.add("gsap-loading");
+      window.addEventListener("load", function () {
+        if (!window.gsap)
+          document.documentElement.classList.remove("gsap-loading");
+      });
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap"
       rel="stylesheet"
     />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
     />
-    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+
     <!-- Google tag (gtag.js) -->
     <script
       async
@@ -49,20 +61,6 @@
 
       gtag("config", "G-YC9C4GYSYR");
     </script>
-    <!-- Google Tag Manager -->
-    <script>
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || [];
-        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
-        var f = d.getElementsByTagName(s)[0],
-          j = d.createElement(s),
-          dl = l != "dataLayer" ? "&l=" + l : "";
-        j.async = true;
-        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
-        f.parentNode.insertBefore(j, f);
-      })(window, document, "script", "dataLayer", "GTM-T5RBBG77");
-    </script>
-    <!-- End Google Tag Manager -->
     <!-- Meta Pixel Code -->
     <script>
       !(function (f, b, e, v, n, t, s) {
@@ -99,976 +97,263 @@
         src="https://www.facebook.com/tr?id=2012538659622524&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
+    <!-- Google Tag Manager -->
+    <script>
+      (function (w, d, s, l, i) {
+        w[l] = w[l] || [];
+        w[l].push({ "gtm.start": new Date().getTime(), event: "gtm.js" });
+        var f = d.getElementsByTagName(s)[0],
+          j = d.createElement(s),
+          dl = l != "dataLayer" ? "&l=" + l : "";
+        j.async = true;
+        j.src = "https://www.googletagmanager.com/gtm.js?id=" + i + dl;
+        f.parentNode.insertBefore(j, f);
+      })(window, document, "script", "dataLayer", "GTM-T5RBBG77");
+    </script>
+    <!-- End Google Tag Manager -->
   </head>
-  <body class="dark">
-    <!-- ========== NAVBAR ========== -->
-    <nav id="navbar">
-      <div class="nav-container">
-        <a href="#home" class="nav-logo" onclick="navigate('home')">
-          <img src="nikhil logotc.png" alt="techNeural" />
-        </a>
 
-        <div class="nav-links" id="navLinks">
-          <a
-            href="#home"
-            class="nav-item active"
-            data-page="home"
-            onclick="navigate('home')"
-          >
-            <svg viewBox="0 0 24 24">
-              <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z" />
-              <polyline points="9 22 9 12 15 12 15 22" />
-            </svg>
-            Home
-          </a>
-          <a
-            href="#about"
-            class="nav-item"
-            data-page="about"
-            onclick="navigate('about')"
-          >
-            <svg viewBox="0 0 24 24">
-              <path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" />
-              <circle cx="12" cy="7" r="4" />
-            </svg>
-            About
-          </a>
-          <a
-            href="#services"
-            class="nav-item"
-            data-page="services"
-            onclick="navigate('services')"
-          >
-            <svg viewBox="0 0 24 24">
-              <rect x="2" y="7" width="20" height="14" rx="2" />
-              <path d="M16 21V5a2 2 0 00-2-2h-4a2 2 0 00-2 2v16" />
-            </svg>
-            Services
-          </a>
-          <a
-            href="#showcase"
-            class="nav-item"
-            data-page="showcase"
-            onclick="navigate('showcase')"
-          >
-            <svg viewBox="0 0 24 24">
-              <rect x="3" y="3" width="7" height="7" />
-              <rect x="14" y="3" width="7" height="7" />
-              <rect x="14" y="14" width="7" height="7" />
-              <rect x="3" y="14" width="7" height="7" />
-            </svg>
-            Showcase
-          </a>
-          <a
-            href="#contact"
-            class="nav-item"
-            data-page="contact"
-            onclick="navigate('contact')"
-          >
-            <svg viewBox="0 0 24 24">
-              <path
-                d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"
-              />
-              <polyline points="22,6 12,13 2,6" />
-            </svg>
-            Contact
-          </a>
-        </div>
+  <body data-page="home">
+    <!-- nav + footer injected by render.js -->
 
-        <button
-          class="hamburger"
-          id="hamburger"
-          onclick="toggleMenu()"
-          aria-label="Toggle menu"
-        >
-          <svg id="hamIcon" viewBox="0 0 24 24">
-            <line x1="3" y1="12" x2="21" y2="12" />
-            <line x1="3" y1="6" x2="21" y2="6" />
-            <line x1="3" y1="18" x2="21" y2="18" />
-          </svg>
-        </button>
-      </div>
-    </nav>
-
-    <!-- Mobile Menu -->
-    <div class="mobile-menu" id="mobileMenu">
-      <a
-        href="#home"
-        onclick="
-          navigate('home');
-          toggleMenu();
-        "
-        >🏠 Home</a
-      >
-      <a
-        href="#about"
-        onclick="
-          navigate('about');
-          toggleMenu();
-        "
-        >👤 About</a
-      >
-      <a
-        href="#services"
-        onclick="
-          navigate('services');
-          toggleMenu();
-        "
-        >💼 Services</a
-      >
-      <a
-        href="#showcase"
-        onclick="
-          navigate('showcase');
-          toggleMenu();
-        "
-        >🗂 Showcase</a
-      >
-      <a
-        href="#contact"
-        onclick="
-          navigate('contact');
-          toggleMenu();
-        "
-        >✉️ Contact</a
-      >
-    </div>
-
-    <!-- ========== PAGES ========== -->
-
-    <!-- HOME PAGE -->
-    <div id="page-home" class="page active">
-      <!-- Hero -->
-      <section class="hero" id="home">
-        <div class="hero-bg-circles" id="heroBg"></div>
-        <div class="hero-content fade-up">
-          <div class="hero-eyebrow">
-            <div class="hero-dot"></div>
-            Trusted by 150+ Businesses Worldwide
-          </div>
-          <h1>
-            Transforming Ideas Into<br /><span class="gradient-text"
-              >Digital Excellence</span
+    <main>
+      <!-- ===== HERO ===== -->
+      <section class="hero" id="hero">
+        <div class="hero__glow hero__glow--1"></div>
+        <div class="hero__glow hero__glow--2"></div>
+        <div class="container hero__inner">
+          <div class="hero__copy">
+            <span class="hero__eyebrow hero-eyebrow"
+              ><span class="hero__eyebrow-dot"></span> AI-Driven Digital
+              Studio</span
             >
-          </h1>
-          <p>
-            techNeural delivers cutting-edge IT solutions — from bespoke web
-            apps to AI-driven products — that empower your business to scale,
-            innovate, and lead.
-          </p>
-          <div class="hero-btns">
-            <button class="btn-primary" onclick="navigate('services')">
-              Explore Services
-              <svg viewBox="0 0 24 24">
-                <line x1="5" y1="12" x2="19" y2="12" />
-                <polyline points="12 5 19 12 12 19" />
-              </svg>
-            </button>
-            <button class="btn-outline" onclick="navigate('contact')">
-              Get a Free Quote
-            </button>
+            <h1 class="hero__title hero-headline">
+              Build smarter. Grow faster with
+              <span class="grad">TechNeural</span>.
+            </h1>
+            <p class="hero__sub hero-sub">
+              We design high-performance websites, intelligent AI automation,
+              and growth systems that turn visitors into customers — and
+              customers into momentum.
+            </p>
+            <div class="hero__actions hero-actions">
+              <a href="contact.html" class="btn btn--primary btn--lg"
+                >Start Your Project <i data-lucide="arrow-right"></i
+              ></a>
+              <a href="work.html" class="btn btn--ghost btn--lg"
+                ><i data-lucide="play"></i> See Our Work</a
+              >
+            </div>
+            <div class="hero__trust hero-actions">
+              <div class="hero__avatars">
+                <span>A</span><span>R</span><span>M</span><span>+</span>
+              </div>
+              <p>
+                Trusted by <strong>150+</strong> founders &amp; teams worldwide
+              </p>
+            </div>
           </div>
-          <div class="hero-stats">
-            <div class="hero-stat">
-              <div class="hero-stat-num">150+</div>
-              <div class="hero-stat-label">Clients Served</div>
+
+          <div class="hero__visual hero-visual">
+            <div class="hero__card hero__card--main" data-float="1">
+              <div class="hero__card-head">
+                <span class="hero__card-title"
+                  ><i data-lucide="activity"></i> Growth Overview</span
+                >
+                <span class="pill pill--green">+38%</span>
+              </div>
+              <div class="hero__chart">
+                <span style="--h: 40%"></span><span style="--h: 62%"></span
+                ><span style="--h: 48%"></span> <span style="--h: 80%"></span
+                ><span style="--h: 66%"></span><span style="--h: 95%"></span
+                ><span style="--h: 78%"></span>
+              </div>
             </div>
-            <div class="hero-stat">
-              <div class="hero-stat-num">200+</div>
-              <div class="hero-stat-label">Projects Delivered</div>
+            <div class="hero__card hero__card--ai" data-float="2">
+              <div class="hero__ai-row">
+                <span class="hero__ai-avatar"><i data-lucide="bot"></i></span>
+                <div>
+                  <strong>AI Assistant</strong>
+                  <p>Automated 2,400 replies this week</p>
+                </div>
+              </div>
             </div>
-            <div class="hero-stat">
-              <div class="hero-stat-num">10+</div>
-              <div class="hero-stat-label">Countries Reached</div>
+            <div class="hero__card hero__card--stat" data-float="3">
+              <span class="hero__stat-num">99.9%</span
+              ><span class="hero__stat-label">Uptime</span>
             </div>
-            <div class="hero-stat">
-              <div class="hero-stat-num">98%</div>
-              <div class="hero-stat-label">Client Satisfaction</div>
+            <div class="hero__card hero__card--code" data-float="4">
+              <div class="hero__code-dots"><i></i><i></i><i></i></div>
+              <code
+                ><span class="c-key">deploy</span>(<span class="c-str"
+                  >"techneural"</span
+                >)<br />→ <span class="c-ok">live in 1.2s ✓</span></code
+              >
             </div>
           </div>
         </div>
+        <a
+          href="#stats"
+          class="hero__scroll"
+          data-scroll
+          aria-label="Scroll down"
+          ><i data-lucide="mouse"></i
+        ></a>
       </section>
 
-      <!-- Services Section -->
-      <section class="section services-preview" id="services-preview">
+      <!-- ===== STATS ===== -->
+      <section class="section--tight" id="stats">
         <div class="container">
-          <div class="section-header">
-            <div class="badge">⚡ Our Expertise</div>
-            <h2>
-              Transforming Ideas into
-              <span class="gradient-text">Digital Reality</span>
+          <div class="stats__grid" id="homeStats" data-stagger></div>
+        </div>
+      </section>
+
+      <!-- ===== SERVICES ===== -->
+      <section class="section" id="services">
+        <div class="container">
+          <div class="section__head" data-reveal>
+            <span class="tag"><i data-lucide="layers"></i> What we do</span>
+            <h2 class="section__title">
+              Services built to <span class="grad">move the needle</span>
             </h2>
-            <p>
-              We deliver cutting-edge solutions tailored to your business needs,
-              helping you stay ahead in an ever-evolving digital landscape.
+            <p class="section__lead">
+              From first pixel to predictable growth — everything you need to
+              launch, automate, and scale, delivered by one senior team.
             </p>
           </div>
-          <div class="services-grid" id="servicesGrid"></div>
+          <div class="services__grid" id="homeServices" data-stagger></div>
         </div>
       </section>
 
-      <!-- Featured Projects Carousel -->
-      <section class="section carousel-section">
-        <div class="container">
-          <div class="section-header">
-            <div class="badge-purple">🚀 Our Work</div>
-            <h2>Featured Projects</h2>
-            <p>
-              Discover our latest work and innovative solutions across multiple
-              industries and technologies
+      <!-- ===== WHY US ===== -->
+      <section class="section why">
+        <div class="container why__inner">
+          <div data-reveal>
+            <span class="tag"
+              ><i data-lucide="badge-check"></i> Why TechNeural</span
+            >
+            <h2 class="section__title">
+              A partner that builds for <span class="grad">outcomes</span>, not
+              just output
+            </h2>
+            <p class="section__lead">
+              We blend design taste, deep engineering and an automation-first
+              mindset — so what we ship looks premium, performs fast, and keeps
+              paying off long after launch.
             </p>
+            <ul class="why__list" id="homeWhyList"></ul>
+            <a href="about.html" class="btn btn--primary"
+              >More about us <i data-lucide="arrow-right"></i
+            ></a>
           </div>
-          <div class="carousel-wrapper">
-            <div class="carousel-track" id="carouselTrack"></div>
-            <div class="carousel-dots" id="carouselDots"></div>
-            <button class="carousel-btn prev" onclick="carouselPrev()">
-              &#8249;
-            </button>
-            <button class="carousel-btn next" onclick="carouselNext()">
-              &#8250;
-            </button>
-          </div>
+          <div class="why__cards" id="homeFeatures" data-stagger></div>
         </div>
       </section>
 
-      <!-- Technical Excellence -->
-      <section class="section tech-section">
-        <div class="container">
-          <div class="section-header">
-            <span class="badge">🏆 Why Choose Us</span>
-            <h2>Technical Excellence</h2>
-            <p>
-              Our multidisciplinary expertise enables us to solve complex
-              challenges with precision-engineered solutions that deliver
-              measurable business impact.
-            </p>
-          </div>
-          <div class="horizontal-scroll-wrapper">
-            <button class="scroll-arrow left" onclick="scrollExpertise(-400)">
-              &#8249;
-            </button>
-            <div class="expertise-scroll" id="expertiseScroll"></div>
-            <button class="scroll-arrow right" onclick="scrollExpertise(400)">
-              &#8250;
-            </button>
-          </div>
-          <div class="scroll-progress-bar">
-            <div class="scroll-progress-fill" id="scrollFill"></div>
-          </div>
-          <div class="text-center mt-16">
-            <p class="text-subtle mb-8 max-w-3xl mx-auto">
-              Our technical capabilities are continuously enhanced through
-              rigorous research and development initiatives, ensuring we remain
-              at the forefront of technological innovation.
-            </p>
-            <button class="btn-brand" onclick="navigate('about')">
-              Explore Our Solutions
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- CTA -->
-      <section class="cta-section">
-        <div class="container text-center">
-          <div class="reveal">
-            <h2>Ready to Transform Your Digital Presence?</h2>
-            <p>
-              Let's discuss how our IT solutions can help you achieve your
-              business goals and stay ahead of the competition.
-            </p>
-            <button class="btn-white" onclick="navigate('contact')">
-              Get Started Today →
-            </button>
-          </div>
-        </div>
-      </section>
-
-      <!-- Footer -->
-      <footer class="footer" id="footer-home"></footer>
-    </div>
-    <!-- /home -->
-
-    <!-- ABOUT PAGE -->
-    <div id="page-about" class="page">
-      <!-- Hero -->
-      <section class="about-hero">
-        <div class="about-hero-bg"></div>
-        <div class="about-hero-particles" id="aboutParticles"></div>
-        <div class="about-blob about-blob-1"></div>
-        <div class="about-blob about-blob-2"></div>
-        <div class="about-blob about-blob-3"></div>
-        <div class="container text-center about-hero-content fade-up">
-          <div class="about-hero-badge">
-            <span class="about-hero-dot"></span> Trusted IT Partner Since 2014
-          </div>
-          <h1>
-            We Are <span class="gradient-text">Innovators</span><br />Building
-            the Digital Future
-          </h1>
-          <p>
-            An elite team of engineers, designers, and strategists crafting
-            world-class digital solutions that transform businesses and create
-            lasting impact across the globe.
-          </p>
-          <div class="about-hero-actions">
-            <button class="btn-white-round" onclick="openStoryModal()">
-              Read Our Story →
-            </button>
-            <button class="btn-outline" onclick="navigate('contact')">
-              Work With Us
-            </button>
-          </div>
-          <div class="about-hero-stats">
-            <div class="about-stat">
-              <div class="about-stat-num">150<span>+</span></div>
-              <div class="about-stat-label">Clients Worldwide</div>
-            </div>
-            <div class="about-stat">
-              <div class="about-stat-num">200<span>+</span></div>
-              <div class="about-stat-label">Projects Delivered</div>
-            </div>
-            <div class="about-stat">
-              <div class="about-stat-num">10<span>+</span></div>
-              <div class="about-stat-label">Countries Reached</div>
-            </div>
-            <div class="about-stat">
-              <div class="about-stat-num">98<span>%</span></div>
-              <div class="about-stat-label">Client Satisfaction</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Story Modal -->
-      <div
-        class="modal-overlay"
-        id="storyModal"
-        onclick="closeStoryModal(event)"
-      >
-        <div class="modal-box">
-          <h3>Our Company's Story</h3>
-          <p style="margin-top: 1rem">
-            techNeural was founded with a single mission: to make world-class
-            technology accessible to every business. Starting from a small team
-            of passionate engineers, we've grown into a global powerhouse
-            delivering transformative digital solutions across web, mobile, AI,
-            and cloud. We believe technology should empower — and that's exactly
-            what we build every day.
-          </p>
-          <button
-            onclick="closeStoryModal()"
-            class="btn-brand mt-4"
-            style="margin-top: 1.5rem"
-          >
-            Close
-          </button>
-        </div>
-      </div>
-
-      <!-- Our Journey -->
+      <!-- ===== PROCESS ===== -->
       <section class="section">
         <div class="container">
-          <div class="two-col">
-            <div class="reveal">
-              <div class="img-glow-wrap">
-                <img
-                  src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?q=80&w=2070&auto=format&fit=crop"
-                  alt="Our team collaboration"
-                />
-              </div>
-            </div>
-            <div class="reveal" style="animation-delay: 0.2s">
-              <div class="section-label">
-                <div class="h-line"></div>
-                <span>Our Journey</span>
-              </div>
-              <h2>
-                A Decade of Digital
-                <span class="gradient-text">Excellence</span>
-              </h2>
-              <p class="text-muted">
-                We are a forward-thinking IT firm that has been transforming
-                businesses through technology since 2014. Our passion is to
-                empower organisations with cutting-edge solutions that drive
-                growth, streamline operations, and foster innovation.
-              </p>
-              <div class="stat-grid">
-                <div class="stat-item">
-                  <div class="stat-icon purple-icon">👥</div>
-                  <div>
-                    <h4>Expert Team</h4>
-                    <p>50+ certified professionals</p>
-                  </div>
-                </div>
-                <div class="stat-item">
-                  <div class="stat-icon pink-icon">🏆</div>
-                  <div>
-                    <h4>Award Winning</h4>
-                    <p>15+ industry awards</p>
-                  </div>
-                </div>
-                <div class="stat-item">
-                  <div class="stat-icon purple-icon">🌐</div>
-                  <div>
-                    <h4>Global Reach</h4>
-                    <p>10+ countries served</p>
-                  </div>
-                </div>
-                <div class="stat-item">
-                  <div class="stat-icon pink-icon">⚡</div>
-                  <div>
-                    <h4>Fast Delivery</h4>
-                    <p>Agile, iterative approach</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Mission -->
-      <section class="section bg-section">
-        <div class="container">
-          <div class="section-header reveal">
-            <div class="badge">🎯 Our Purpose</div>
-            <h2>Our Mission</h2>
-            <div class="divider-line brand-line"></div>
-          </div>
-          <div class="mission-card reveal">
-            <div class="glow-corner"></div>
-            <div class="mission-icon">⚡</div>
-            <p class="mission-quote">
-              "To deliver innovative IT solutions that drive growth, streamline
-              operations, and foster digital success for our clients worldwide —
-              creating measurable impact through engineering excellence and
-              human-centred design."
+          <div class="section__head" data-reveal>
+            <span class="tag"><i data-lucide="route"></i> How we work</span>
+            <h2 class="section__title">
+              A clear path from <span class="grad">idea to scale</span>
+            </h2>
+            <p class="section__lead">
+              Five focused steps. Zero guesswork. You always know what's
+              happening and what's next.
             </p>
-            <div class="mission-values">
-              <div class="value-item">
-                <div class="value-icon green-icon">✅</div>
-                <h4>Excellence</h4>
-                <p>
-                  Delivering nothing short of exceptional quality in every
-                  project
-                </p>
-              </div>
-              <div class="value-item">
-                <div class="value-icon yellow-icon">💡</div>
-                <h4>Innovation</h4>
-                <p>
-                  Pushing boundaries with creative, forward-thinking solutions
-                </p>
-              </div>
-              <div class="value-item">
-                <div class="value-icon purple-icon2">🤝</div>
-                <h4>Partnership</h4>
-                <p>
-                  Working as an extension of your team to achieve shared goals
-                </p>
-              </div>
-            </div>
           </div>
+          <div class="process__track" id="homeProcess" data-stagger></div>
         </div>
       </section>
 
-      <!-- Tech Stack -->
+      <!-- ===== WORK PREVIEW ===== -->
       <section class="section">
         <div class="container">
-          <div class="section-header reveal">
-            <div class="badge-purple">🛠️ Tech Stack</div>
-            <h2>Technologies We Use</h2>
-            <div class="divider-line brand-line"></div>
-            <p>
-              We leverage cutting-edge technologies to build scalable, robust,
-              and highly efficient solutions across all platforms.
-            </p>
-          </div>
-          <div class="tech-grid" id="techGrid"></div>
-        </div>
-      </section>
-
-      <!-- Global Reach -->
-      <section class="section bg-section">
-        <div class="container">
-          <div class="section-header reveal">
-            <div class="badge-green">🌍 Global Impact</div>
-            <h2>Our Global Reach</h2>
-            <div class="divider-line green-line"></div>
-            <p>
-              With presence across multiple continents, our innovative solutions
-              empower businesses around the globe.
-            </p>
-          </div>
-          <div class="world-map reveal">
-            <img
-              src="https://cdn.pixabay.com/photo/2018/03/15/16/11/background-3228704_1280.jpg"
-              alt="World Map showing global reach"
-            />
-          </div>
-          <div class="stats-row reveal">
-            <div class="big-stat purple">
-              <span>150+</span><small>Clients Worldwide</small>
-            </div>
-            <div class="big-stat pink">
-              <span>10+</span><small>Countries</small>
-            </div>
-            <div class="big-stat violet">
-              <span>200+</span><small>Projects Delivered</small>
-            </div>
-            <div class="big-stat green">
-              <span>98%</span><small>Client Satisfaction</small>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- CTA -->
-      <section class="cta-section">
-        <div class="container text-center reveal">
-          <h2>Ready to start your digital journey with us?</h2>
-          <p>
-            Let's create something extraordinary together. Your vision, our
-            expertise.
-          </p>
-          <button class="btn-white" onclick="navigate('contact')">
-            Get in Touch →
-          </button>
-        </div>
-      </section>
-
-      <footer class="footer" id="footer-about"></footer>
-    </div>
-    <!-- /about -->
-
-    <!-- SERVICES PAGE -->
-    <div id="page-services" class="page">
-      <!-- Hero -->
-      <section class="services-hero">
-        <div class="services-hero-bg"></div>
-        <div class="about-hero-particles" id="servicesParticles"></div>
-        <div class="about-blob about-blob-1"></div>
-        <div class="about-blob about-blob-2"></div>
-        <div class="about-blob about-blob-3"></div>
-        <div class="container text-center services-hero-content fade-up">
-          <div class="about-hero-badge">
-            <span class="about-hero-dot"></span> Specialized Tech Solutions
-          </div>
-          <h1>
-            Transform Your <span class="gradient-text">Vision</span><br />Into
-            Digital Reality
-          </h1>
-          <p>
-            Discover our comprehensive range of services designed to elevate
-            your business, accelerate growth, and future-proof your digital
-            operations.
-          </p>
-          <div class="about-hero-actions">
-            <button class="btn-white-round" onclick="navigate('contact')">
-              Get a Free Quote →
-            </button>
-            <button
-              class="btn-outline"
-              onclick="window.scrollTo({ top: 800, behavior: 'smooth' })"
+          <div class="section__head" data-reveal>
+            <span class="tag"
+              ><i data-lucide="folder-open"></i> Featured work</span
             >
-              Explore Services
-            </button>
-          </div>
-          <div class="about-hero-stats">
-            <div class="about-stat">
-              <div class="about-stat-num">98<span>%</span></div>
-              <div class="about-stat-label">Client Success</div>
-            </div>
-            <div class="about-stat">
-              <div class="about-stat-num">24<span>/7</span></div>
-              <div class="about-stat-label">Expert Support</div>
-            </div>
-            <div class="about-stat">
-              <div class="about-stat-num">100<span>%</span></div>
-              <div class="about-stat-label">Secure Delivery</div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Services Grid -->
-      <section class="section bg-section">
-        <div class="container">
-          <div class="section-header reveal">
-            <div class="badge">⚡ Our Expertise</div>
-            <h2>
-              Transforming Ideas into
-              <span class="gradient-text">Digital Reality</span>
+            <h2 class="section__title">
+              Recent projects we're <span class="grad">proud of</span>
             </h2>
-            <p>
-              We deliver cutting-edge solutions tailored to your business needs,
-              helping you stay ahead in the digital landscape
+            <p class="section__lead">
+              A glimpse at what happens when strategy, design and engineering
+              pull in the same direction.
             </p>
           </div>
-          <div class="services-cards-grid" id="serviceCardsGrid"></div>
-        </div>
-      </section>
-
-      <!-- Process Section -->
-      <!-- <section class="section process-section">
-      <div class="container relative">
-        <div class="section-header reveal">
-          <div class="badge-purple">🗺️ Our Approach</div>
-          <h2>How We Bring Your Vision to Life</h2>
-          <p>Our proven four-step process ensures successful delivery of your digital solutions through systematic planning, development, and deployment</p>
-        </div>
-        <div class="process-grid">
-          <div class="process-card reveal" style="animation-delay:0s">
-            <div class="process-icon" style="background:linear-gradient(135deg,#7C3AED,#C026D3)">🎯</div>
-            <h3>Discovery &amp; Planning</h3>
-            <p>We start by deeply understanding your goals, requirements, and vision through detailed consultation and research.</p>
-          </div>
-          <div class="process-card reveal" style="animation-delay:.1s">
-            <div class="process-icon" style="background:linear-gradient(135deg,#5B21B6,#7C3AED)">💡</div>
-            <h3>Design &amp; Strategy</h3>
-            <p>Creating comprehensive blueprints, wireframes, and strategies tailored to your specific needs and audience.</p>
-          </div>
-          <div class="process-card reveal" style="animation-delay:.2s">
-            <div class="process-icon" style="background:linear-gradient(135deg,#2D0E8A,#5B21B6)">⚙️</div>
-            <h3>Development &amp; Testing</h3>
-            <p>Bringing your solution to life with agile development, continuous integration, and rigorous quality testing.</p>
-          </div>
-          <div class="process-card reveal" style="animation-delay:.3s">
-            <div class="process-icon" style="background:linear-gradient(135deg,#C026D3,#D946EF)">🚀</div>
-            <h3>Launch &amp; Support</h3>
-            <p>Seamless deployment with continued monitoring, optimisation, and dedicated post-launch support services.</p>
-          </div>
-        </div>
-        <div class="features-grid">
-          <div class="feature-card glass-card reveal">
-            <div class="feat-icon">🔄</div>
-            <h4>Agile Methodology</h4>
-            <p>Iterative development with continuous feedback and improvements throughout the cycle</p>
-          </div>
-          <div class="feature-card glass-card reveal" style="animation-delay:.1s">
-            <div class="feat-icon">✅</div>
-            <h4>Quality Assurance</h4>
-            <p>Comprehensive automated and manual testing at every stage of development</p>
-          </div>
-          <div class="feature-card glass-card reveal" style="animation-delay:.2s">
-            <div class="feat-icon">🛡️</div>
-            <h4>Continuous Support</h4>
-            <p>Dedicated support team available for post-launch maintenance and feature enhancements</p>
-          </div>
-        </div>
-      </div>
-    </section> -->
-
-      <!-- Why Choose Us -->
-      <section class="section bg-section relative overflow-hidden">
-        <div class="section-overlay-img"></div>
-        <div class="container relative z-10">
-          <div class="section-header reveal">
-            <div class="badge-green">💎 Our Value</div>
-            <h2>
-              Why Partner with <span class="gradient-text">techNeural</span>?
-            </h2>
-            <p>
-              We combine deep technical expertise with strategic business
-              insight to deliver results that truly matter.
-            </p>
-          </div>
-          <div class="value-proposition-grid">
-            <div class="value-card reveal">
-              <div
-                class="value-icon-wrap"
-                style="
-                  background: linear-gradient(
-                    135deg,
-                    rgba(124, 58, 237, 0.2),
-                    rgba(192, 38, 211, 0.2)
-                  );
-                "
-              >
-                <i class="fas fa-bolt"></i>
-              </div>
-              <h3>Extreme Performance</h3>
-              <p>
-                We build lightweight, high-speed solutions optimized for maximum
-                conversion and user retention.
-              </p>
-            </div>
-            <div class="value-card reveal" style="animation-delay: 0.1s">
-              <div
-                class="value-icon-wrap"
-                style="
-                  background: linear-gradient(
-                    135deg,
-                    rgba(192, 38, 211, 0.2),
-                    rgba(124, 58, 237, 0.2)
-                  );
-                "
-              >
-                <i class="fas fa-shield-halved"></i>
-              </div>
-              <h3>Enterprise Security</h3>
-              <p>
-                Standardized security protocols and periodic audits to keep your
-                infrastructure and user data safe.
-              </p>
-            </div>
-            <div class="value-card reveal" style="animation-delay: 0.2s">
-              <div
-                class="value-icon-wrap"
-                style="
-                  background: linear-gradient(
-                    135deg,
-                    rgba(124, 58, 237, 0.2),
-                    rgba(192, 38, 211, 0.2)
-                  );
-                "
-              >
-                <i class="fas fa-handshake-angle"></i>
-              </div>
-              <h3>Long-term Partnership</h3>
-              <p>
-                We don't just launch and leave. We partner with you for
-                continuous digital growth and maintenance.
-              </p>
-            </div>
-            <div class="value-card reveal" style="animation-delay: 0.3s">
-              <div
-                class="value-icon-wrap"
-                style="
-                  background: linear-gradient(
-                    135deg,
-                    rgba(192, 38, 211, 0.2),
-                    rgba(124, 58, 237, 0.2)
-                  );
-                "
-              >
-                <i class="fas fa-chart-line"></i>
-              </div>
-              <h3>Data Intelligence</h3>
-              <p>
-                Every engineering and design decision is backed by analytics and
-                rigorous user research.
-              </p>
-            </div>
+          <div class="work__grid" id="homeWork" data-stagger></div>
+          <div style="text-align: center; margin-top: 44px" data-reveal>
+            <a href="work.html" class="btn btn--ghost btn--lg"
+              >View all projects <i data-lucide="arrow-right"></i
+            ></a>
           </div>
         </div>
       </section>
 
-      <!-- CTA -->
-      <section class="cta-section">
-        <div class="container text-center reveal">
-          <h2>Ready to Transform Your Business?</h2>
-          <p>
-            Let's collaborate to create innovative solutions that drive your
-            success and accelerate growth
-          </p>
-          <button class="btn-white" onclick="navigate('contact')">
-            Start Your Journey →
-          </button>
-        </div>
-      </section>
-
-      <footer class="footer" id="footer-services"></footer>
-    </div>
-    <!-- /services -->
-
-    <!-- SERVICE DETAIL PAGE (Dynamic) -->
-    <div id="page-service-detail" class="page">
-      <div id="serviceDetailPageContent"></div>
-      <div class="footer" id="footer-service-detail"></div>
-    </div>
-
-    <!-- SHOWCASE PAGE -->
-    <div id="page-showcase" class="page">
-      <section class="services-hero" style="min-height: 50vh">
-        <div class="services-hero-bg"></div>
-        <div class="container text-center services-hero-content fade-up">
-          <div class="badge-outline">Our Portfolio</div>
-          <h1>Featured <span class="gradient-text">Showcase</span></h1>
-          <p>
-            Explore our diverse portfolio of award-winning projects across
-            multiple industries and technologies
-          </p>
-        </div>
-      </section>
+      <!-- ===== TESTIMONIALS ===== -->
       <section class="section">
         <div class="container">
-          <div class="showcase-filter" id="showcaseFilter"></div>
-          <div class="showcase-grid" id="showcaseGrid"></div>
-        </div>
-      </section>
-      <footer class="footer" id="footer-showcase"></footer>
-    </div>
-
-    <!-- CONTACT PAGE -->
-    <div id="page-contact" class="page">
-      <section class="contact-hero">
-        <div class="contact-hero-bg" id="contactBg"></div>
-        <div class="container text-center fade-up">
-          <div class="send-icon-wrap">📧</div>
-          <h1 class="contact-title">Get in Touch</h1>
-          <p class="contact-subtitle">
-            We're here to help you build something great. Let's talk!
-          </p>
-        </div>
-      </section>
-
-      <!-- Contact Main Section -->
-      <section class="section relative overflow-hidden">
-        <div class="section-overlay-img" style="opacity: 0.03"></div>
-        <div class="container relative z-10">
-          <div class="contact-main-grid">
-            <div class="contact-info-panel reveal">
-              <div class="badge-outline mb-4">📍 CONNECT WITH US</div>
-              <h2 class="mb-4">
-                Ready to build something
-                <span class="gradient-text">exceptional</span>?
-              </h2>
-              <p class="mb-8 text-muted">
-                We combine human-centered design with world-class engineering to
-                build products that users love and businesses thrive on.
-              </p>
-              <div class="contact-methods">
-                <div class="method-card">
-                  <div class="method-icon"><i class="fas fa-envelope"></i></div>
-                  <div>
-                    <h4>Email Us</h4>
-                    <a href="mailto:the.techneural@gmail.com"
-                      >the.techneural@gmail.com</a
-                    >
-                  </div>
-                </div>
-                <div class="method-card">
-                  <div class="method-icon"><i class="fab fa-whatsapp"></i></div>
-                  <div>
-                    <h4>WhatsApp</h4>
-                    <a href="https://wa.me/919193257838" target="_blank"
-                      >+91 9193257838</a
-                    >
-                  </div>
-                </div>
-                <div class="method-card">
-                  <div class="method-icon"><i class="fas fa-clock"></i></div>
-                  <div>
-                    <h4>Support Hours</h4>
-                    <p>Mon - Sat: 9:00 AM - 7:00 PM GMT</p>
-                  </div>
-                </div>
-              </div>
-              <div class="contact-social-pills mt-8">
-                <a
-                  href="https://www.facebook.com/profile.php?id=61573328364639"
-                  target="_blank"
-                  class="social-pill fb"
-                  ><i class="fab fa-facebook-f"></i> Facebook</a
-                >
-                <a
-                  href="https://www.instagram.com/the.techneural/"
-                  target="_blank"
-                  class="social-pill ig"
-                  ><i class="fab fa-instagram"></i> Instagram</a
-                >
-                <a
-                  href="https://www.linkedin.com/company/107535474/"
-                  target="_blank"
-                  class="social-pill li"
-                  ><i class="fab fa-linkedin-in"></i> LinkedIn</a
-                >
-              </div>
-            </div>
-            <div
-              class="contact-form-container reveal"
-              style="animation-delay: 0.2s"
-            >
-              <div class="contact-glass-form">
-                <div class="form-header">
-                  <h3>Send us a Message</h3>
-                  <p>We typically respond within 12 hours.</p>
-                </div>
-                <form id="contactForm" onsubmit="handleContactSubmit(event)">
-                  <div class="form-group-custom">
-                    <label>Full Name</label>
-                    <div class="input-wrap">
-                      <i class="fas fa-user"></i
-                      ><input
-                        type="text"
-                        id="cName"
-                        placeholder="Your Name"
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div class="form-group-custom">
-                    <label>Email Address</label>
-                    <div class="input-wrap">
-                      <i class="fas fa-envelope"></i
-                      ><input
-                        type="email"
-                        id="cEmail"
-                        placeholder="your@email.com"
-                        required
-                      />
-                    </div>
-                  </div>
-                  <div class="form-group-custom">
-                    <label>Project Details</label>
-                    <textarea
-                      id="cMessage"
-                      rows="5"
-                      placeholder="Tell us about your vision..."
-                      required
-                    ></textarea>
-                  </div>
-                  <button type="submit" class="btn-brand w-full mt-4">
-                    Send Message <i class="fas fa-paper-plane ml-2"></i>
-                  </button>
-                </form>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- FAQ -->
-      <section class="section bg-section">
-        <div class="container">
-          <div class="section-header reveal">
-            <div class="badge">❓ FAQ</div>
-            <h2>
-              Frequently Asked <span class="gradient-text">Questions</span>
+          <div class="section__head" data-reveal>
+            <span class="tag"><i data-lucide="quote"></i> Kind words</span>
+            <h2 class="section__title">
+              Teams that <span class="grad">grew with us</span>
             </h2>
           </div>
-          <div class="faq-wrap glass-card reveal" id="faqContainer"></div>
+        </div>
+        <div class="swiper testimonials__swiper" data-reveal>
+          <div class="swiper-wrapper" id="homeTestimonials"></div>
+          <div class="swiper-pagination"></div>
         </div>
       </section>
 
-      <footer class="footer" id="footer-contact"></footer>
-    </div>
-    <!-- /contact -->
+      <!-- ===== FINAL CTA ===== -->
+      <section class="section" id="contact-cta">
+        <div class="container">
+          <div class="cta__panel" data-reveal>
+            <div class="cta__glow"></div>
+            <span class="tag tag--light"
+              ><i data-lucide="sparkles"></i> Let's build</span
+            >
+            <h2 class="cta__title">
+              Ready to build your <span class="grad">growth engine</span>?
+            </h2>
+            <p class="cta__sub">
+              Whether you need a website, AI automation, or a full growth
+              strategy — let's turn your idea into something that performs. Book
+              a free, no-pressure consultation.
+            </p>
+            <div class="cta__actions">
+              <a href="contact.html" class="btn btn--primary btn--lg"
+                >Book a Free Consultation <i data-lucide="arrow-right"></i
+              ></a>
+              <a href="work.html" class="btn btn--ghost btn--lg"
+                >Explore our work</a
+              >
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
 
-    <!-- ========== SERVICE MODAL ========== -->
-    <div
-      class="modal-overlay"
-      id="serviceModal"
-      onclick="closeServiceModal(event)"
-    >
-      <div class="service-modal-box" id="serviceModalContent"></div>
-    </div>
-
-    <!-- ========== TOAST ========== -->
-    <div class="toast" id="toast"></div>
-
-    <!-- Back to Top -->
-    <button
-      class="back-to-top"
-      id="backToTop"
-      onclick="window.scrollTo({ top: 0, behavior: 'smooth' })"
-      aria-label="Back to top"
-    >
-      ↑
+    <button class="to-top" id="toTop" aria-label="Back to top">
+      <i data-lucide="arrow-up"></i>
     </button>
 
-    <script src="app.js"></script>
+    <!-- Libraries -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <!-- App: data → render → behaviour -->
+    <script src="js/app.js"></script>
+    <script src="js/render.js"></script>
+    <script src="js/smooth-scroll.js"></script>
+    <script src="js/slider.js"></script>
+    <script src="js/animations.js"></script>
+    <script src="js/main.js"></script>
   </body>
 </html>
