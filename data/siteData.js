@@ -174,10 +174,10 @@ const siteData = {
 
   /* ---------- Testimonials ---------- */
   testimonials: [
-    { initial: "S", name: "Sara Whitman", role: "Founder, Nimbus Commerce", quote: "TechNeural shipped in six weeks what other agencies quoted six months for. They felt like part of our company, not a vendor." },
-    { initial: "D", name: "David Okafor", role: "COO, Atlas SaaS", quote: "Their AI automation quietly saved our support team 30 hours a week. The ROI was obvious within the first month." },
-    { initial: "M", name: "Mei Lin", role: "Marketing Lead, Ascend", quote: "Our organic traffic tripled in six months. Best of all, the reporting was honest — no vanity metrics, just real growth." },
-    { initial: "J", name: "Jonas Berg", role: "CEO, Vault Fintech", quote: "Premium design, flawless performance, and a team that actually cares. We've recommended them to everyone we know." },
+    { initial: "A", name: "Arjun Sharma", role: "Founder, Nimbusmart", quote: "TechNeural shipped in six weeks what other agencies quoted six months for. They genuinely felt like part of our team — not just another vendor." },
+    { initial: "P", name: "Priya Mehrotra", role: "COO, Vedanta SaaS", quote: "Their AI automation quietly saved our support team 30 hours a week. The ROI was obvious within the very first month of going live." },
+    { initial: "R", name: "Rahul Kapoor", role: "Marketing Lead, Ascend Digital", quote: "Our organic traffic tripled in six months. What I loved most — the reporting was totally honest, no vanity metrics, just real growth numbers." },
+    { initial: "S", name: "Sneha Patil", role: "CEO, Vault Fintech", quote: "Premium design, flawless performance and a team that actually cares. We've recommended TechNeural to every founder we know." },
   ],
 
   /* ---------- Blog ---------- */

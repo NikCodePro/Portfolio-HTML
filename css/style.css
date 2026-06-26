@@ -1057,9 +1057,14 @@ h4 {
    TEAM (about)
    ===================================================== */
 .team__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  display: flex;
+  justify-content: center;
   gap: 20px;
+  flex-wrap: wrap;
+}
+.team-card {
+  width: 100%;
+  max-width: 320px;
 }
 .team-card {
   text-align: center;

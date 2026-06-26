@@ -8,7 +8,7 @@
         <a href="<%= l.href %>" class="<%= l.page === activePage ? 'is-active' : '' %>"><%= l.label %></a>
       <% }); %>
     </nav>
-    <a href="/contact" class="btn btn--primary nav__cta">Book a Call <i data-lucide="arrow-up-right"></i></a>
+    <a href="tel:<%= site.phone %>" class="btn btn--primary nav__cta">Book a Call <i data-lucide="phone-call"></i></a>
     <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">
       <span></span><span></span><span></span>
     </button>
@@ -17,6 +17,6 @@
     <% nav.forEach(function(l) { %>
       <a href="<%= l.href %>" class="<%= l.page === activePage ? 'is-active' : '' %>"><%= l.label %></a>
     <% }); %>
-    <a href="/contact" class="btn btn--primary">Book a Call</a>
+    <a href="tel:<%= site.phone %>" class="btn btn--primary">Book a Call</a>
   </div>
 </header>
