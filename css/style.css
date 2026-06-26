@@ -497,6 +497,7 @@ h4 {
 .hero__visual {
   position: relative;
   height: 480px;
+  width: 100%;
 }
 .hero__card {
   position: absolute;

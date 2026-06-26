@@ -4,6 +4,7 @@ const path = require('path');
 const nodemailer = require('nodemailer');
 const ejs = require('ejs');
 const siteData = require('./data/siteData');
+const https = require('https');
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -74,6 +75,80 @@ async function getTransporter() {
   return cachedTransporter;
 }
 
+// Helper: Send email via Resend HTTP API (using port 443 over HTTPS)
+function sendResendEmail(apiKey, { from, to, replyTo, subject, html }) {
+  return new Promise((resolve, reject) => {
+    const postData = JSON.stringify({
+      from,
+      to: typeof to === 'string' ? [to] : to,
+      reply_to: replyTo,
+      subject,
+      html
+    });
+
+    const options = {
+      hostname: 'api.resend.com',
+      port: 443,
+      path: '/emails',
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${apiKey}`,
+        'Content-Length': Buffer.byteLength(postData)
+      }
+    };
+
+    const req = https.request(options, (res) => {
+      let body = '';
+      res.on('data', (chunk) => body += chunk);
+      res.on('end', () => {
+        try {
+          if (!body) {
+            if (res.statusCode >= 200 && res.statusCode < 300) {
+              return resolve({ messageId: 'resend-success-no-id', resend: true });
+            }
+            return reject(new Error(`Resend API empty response with status: ${res.statusCode}`));
+          }
+          const json = JSON.parse(body);
+          if (res.statusCode >= 200 && res.statusCode < 300) {
+            resolve({ messageId: json.id, resend: true });
+          } else {
+            reject(new Error(`Resend API error (${res.statusCode}): ${json.message || body}`));
+          }
+        } catch (e) {
+          reject(new Error(`Failed to parse Resend response: ${body}`));
+        }
+      });
+    });
+
+    req.on('error', (e) => {
+      reject(e);
+    });
+
+    req.write(postData);
+    req.end();
+  });
+}
+
+// Unified Mail Sender: Dispatches email via Resend HTTP API (if configured) or Nodemailer SMTP
+async function sendMail({ from, to, replyTo, subject, html }) {
+  const resendApiKey = process.env.RESEND_API_KEY;
+  if (resendApiKey) {
+    return sendResendEmail(resendApiKey, { from, to, replyTo, subject, html });
+  }
+
+  // Fallback to Nodemailer SMTP
+  const transporter = await getTransporter();
+  const info = await transporter.sendMail({
+    from,
+    to,
+    replyTo,
+    subject,
+    html
+  });
+  return info;
+}
+
 // Routes for rendering pages
 app.get('/', (req, res) => {
   res.render('index', { ...siteData, activePage: 'home' });
@@ -108,9 +183,20 @@ app.post('/api/contact', async (req, res) => {
   }
 
   try {
-    const transporter = await getTransporter();
     const adminEmail = process.env.CONTACT_RECEIVER_EMAIL || 'the.techneural@gmail.com';
-    const fromAddress = process.env.SMTP_USER || '"TechNeural Webserver" <webserver@techneural.com>';
+    
+    let adminFromAddress;
+    let userThanksFromAddress;
+
+    if (process.env.RESEND_API_KEY) {
+      const customFrom = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
+      adminFromAddress = `"${name} via Website" <${customFrom}>`;
+      userThanksFromAddress = `"TechNeural" <${customFrom}>`;
+    } else {
+      const smtpUser = process.env.SMTP_USER || 'webserver@techneural.com';
+      adminFromAddress = `"${name} via Website" <${smtpUser}>`;
+      userThanksFromAddress = `"TechNeural" <the.techneural@gmail.com>`;
+    }
 
     // 1. Compile EJS template for Admin Notification
     const adminHtml = await ejs.renderFile(
@@ -124,30 +210,30 @@ app.post('/api/contact', async (req, res) => {
       { name, service, message }
     );
 
-    // Send admin notification
-    const adminInfo = await transporter.sendMail({
-      from: `"${name} via Website" <${process.env.SMTP_USER}>`, // Send FROM nikhil919325
-      to: adminEmail, // TO the.techneural
-      replyTo: email, // Reply to the user
-      subject: `TechNeural Contact: ${name} is interested in ${service || 'a Project'}`,
-      html: adminHtml
-    });
-    
-    // Log preview link if test account
-    if (transporter.isTestAccount && adminInfo.messageId !== 'console-mock-id') {
-      console.log(`[SMTP] Admin Notification preview URL: ${nodemailer.getTestMessageUrl(adminInfo)}`);
+    // Send admin notification (critical, will throw if it fails)
+    try {
+      await sendMail({
+        from: adminFromAddress,
+        to: adminEmail,
+        replyTo: email,
+        subject: `TechNeural Contact: ${name} is interested in ${service || 'a Project'}`,
+        html: adminHtml
+      });
+    } catch (adminErr) {
+      console.error('Error sending admin contact notification email:', adminErr);
+      throw adminErr; // Rethrow to fail the response
     }
 
-    // Send user thank you email
-    const userInfo = await transporter.sendMail({
-      from: '"TechNeural" <the.techneural@gmail.com>', // Send FROM the.techneural
-      to: email, // TO the user
-      subject: `Thanks for reaching out to TechNeural!`,
-      html: userHtml
-    });
-
-    if (transporter.isTestAccount && userInfo.messageId !== 'console-mock-id') {
-      console.log(`[SMTP] User Receipt preview URL: ${nodemailer.getTestMessageUrl(userInfo)}`);
+    // Send user thank you email (non-critical, warn if it fails e.g., on Resend sandbox restrictions)
+    try {
+      await sendMail({
+        from: userThanksFromAddress,
+        to: email,
+        subject: `Thanks for reaching out to TechNeural!`,
+        html: userHtml
+      });
+    } catch (userErr) {
+      console.warn('Warning: Failed to send thank-you email to user:', userErr.message);
     }
 
     return res.json({ success: true, message: 'Message sent and confirmation emails dispatched successfully!' });
@@ -165,8 +251,13 @@ app.post('/api/newsletter', async (req, res) => {
   }
 
   try {
-    const transporter = await getTransporter();
-    const fromAddress = process.env.SMTP_USER || '"TechNeural Webserver" <webserver@techneural.com>';
+    let newsletterFromAddress;
+    if (process.env.RESEND_API_KEY) {
+      const customFrom = process.env.RESEND_FROM_EMAIL || 'onboarding@resend.dev';
+      newsletterFromAddress = `"TechNeural" <${customFrom}>`;
+    } else {
+      newsletterFromAddress = `"TechNeural" <the.techneural@gmail.com>`;
+    }
 
     // Compile EJS template for subscriber welcoming
     const welcomeHtml = await ejs.renderFile(
@@ -174,16 +265,16 @@ app.post('/api/newsletter', async (req, res) => {
       {}
     );
 
-    // Send welcome email to subscriber
-    const welcomeInfo = await transporter.sendMail({
-      from: '"TechNeural" <the.techneural@gmail.com>', // Send FROM the.techneural
-      to: email,
-      subject: 'Welcome to the TechNeural Newsletter! 🚀',
-      html: welcomeHtml
-    });
-
-    if (transporter.isTestAccount && welcomeInfo.messageId !== 'console-mock-id') {
-      console.log(`[SMTP] Newsletter Welcome preview URL: ${nodemailer.getTestMessageUrl(welcomeInfo)}`);
+    // Send welcome email to subscriber (non-critical)
+    try {
+      await sendMail({
+        from: newsletterFromAddress,
+        to: email,
+        subject: 'Welcome to the TechNeural Newsletter! 🚀',
+        html: welcomeHtml
+      });
+    } catch (mailErr) {
+      console.warn('Warning: Failed to send newsletter welcome email:', mailErr.message);
     }
 
     return res.json({ success: true, message: 'Subscribed to the newsletter successfully!' });

@@ -116,16 +116,28 @@
   }
 
   .hero__visual {
-    height: 360px;
+    height: 380px;
   }
   .hero__card--main {
-    width: 260px;
+    width: 250px;
+    top: 10px;
+    left: 0;
   }
   .hero__card--ai {
     width: 220px;
+    top: -10px;
+    right: 0;
+  }
+  .hero__card--stat {
+    width: 140px;
+    bottom: 20px;
+    left: 0;
+    padding: 16px 14px;
   }
   .hero__card--code {
-    width: 210px;
+    width: 200px;
+    bottom: -10px;
+    right: 0;
   }
 
   .testimonial p {
@@ -193,5 +205,30 @@
   }
   .hero__title {
     font-size: 2.4rem;
+  }
+  .hero__visual {
+    height: 320px;
+  }
+  .hero__card--main {
+    width: 220px;
+  }
+  .hero__card--ai {
+    width: 190px;
+    top: 30px;
+  }
+  .hero__card--stat {
+    width: 120px;
+    bottom: 10px;
+    padding: 12px;
+  }
+  .hero__stat-num {
+    font-size: 1.2rem;
+  }
+  .hero__card--code {
+    width: 170px;
+    bottom: 20px;
+  }
+  .hero__card-title, .hero__ai-row strong, .hero__code-dots + code {
+    font-size: 0.75rem;
   }
 }
