@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+  <%- include('partials/head', { title: service.title + ' — TechNeural', description: service.desc }) %>
+
+  <body data-page="services">
+    <%- include('partials/header') %>
+
+    <main>
+      <!-- ===== PAGE HERO ===== -->
+      <section class="page-hero svc-detail-hero">
+        <div class="page-hero__glow"></div>
+        <div class="container">
+          <div class="crumb hero-eyebrow">
+            <a href="/">Home</a>
+            <i data-lucide="chevron-right"></i>
+            <a href="/services">Services</a>
+            <i data-lucide="chevron-right"></i>
+            <%= service.title %>
+          </div>
+          <div class="svc-detail-hero__inner">
+            <span class="svc-detail-hero__icon">
+              <i data-lucide="<%= service.icon %>"></i>
+            </span>
+            <h1 class="hero-headline"><%= service.hero %></h1>
+            <p class="hero-sub"><%= service.desc %></p>
+            <div class="hero__actions hero-actions">
+              <a href="/contact" class="btn btn--primary btn--lg">
+                <%= service.cta %> <i data-lucide="arrow-right"></i>
+              </a>
+              <a href="/services" class="btn btn--ghost btn--lg">
+                All services <i data-lucide="grid-2x2"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== LONG DESC ===== -->
+      <section class="section--tight">
+        <div class="container">
+          <div class="svc-detail__split" data-reveal>
+            <div class="svc-detail__desc">
+              <span class="tag"><i data-lucide="info"></i> About this service</span>
+              <h2 class="section__title" style="margin-top:16px">What we actually <span class="grad">deliver</span></h2>
+              <p class="section__lead" style="margin-top:16px;font-size:1.05rem;line-height:1.75">
+                <%= service.longDesc %>
+              </p>
+              <a href="/contact" class="btn btn--primary" style="margin-top:28px">
+                Get in touch <i data-lucide="arrow-right"></i>
+              </a>
+            </div>
+            <div class="svc-detail__highlights glass-card" data-reveal>
+              <h3 style="font-size:1.05rem;margin-bottom:20px;color:var(--muted);font-weight:600;text-transform:uppercase;letter-spacing:.04em">
+                What's included
+              </h3>
+              <ul class="svc-highlight-list">
+                <% service.highlights.forEach(function(h) { %>
+                  <li>
+                    <span class="svc-highlight-icon"><i data-lucide="<%= h.icon %>"></i></span>
+                    <span><%= h.text %></span>
+                  </li>
+                <% }); %>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== PROCESS ===== -->
+      <section class="section">
+        <div class="container">
+          <div class="section__head" data-reveal>
+            <span class="tag"><i data-lucide="route"></i> How we work</span>
+            <h2 class="section__title">A clear path from <span class="grad">start to launch</span></h2>
+            <p class="section__lead">Five focused steps. Zero guesswork. You always know what's happening and what's next.</p>
+          </div>
+          <div class="process__track" id="svcProcess" data-stagger>
+            <%- include('partials/process') %>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== OTHER SERVICES ===== -->
+      <section class="section">
+        <div class="container">
+          <div class="section__head" data-reveal>
+            <span class="tag"><i data-lucide="layers"></i> Other services</span>
+            <h2 class="section__title">You might also need <span class="grad">these</span></h2>
+          </div>
+          <div class="services__grid" id="otherServices" data-stagger>
+            <% services.filter(function(s){ return s.id !== service.id; }).slice(0, 3).forEach(function(s) { %>
+              <article class="service-card glass-card" data-tilt>
+                <span class="service-card__icon"><i data-lucide="<%= s.icon %>"></i></span>
+                <h3><%= s.title %></h3>
+                <p><%= s.desc %></p>
+                <a class="service-card__link" href="/services/<%= s.id %>">
+                  Learn more <i data-lucide="arrow-right"></i>
+                </a>
+              </article>
+            <% }); %>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== CTA ===== -->
+      <section class="section">
+        <div class="container">
+          <div class="cta__panel" data-reveal>
+            <span class="tag tag--light"><i data-lucide="sparkles"></i> Let's build</span>
+            <h2 class="cta__title">Ready to get started with <span class="grad"><%= service.title %></span>?</h2>
+            <p class="cta__sub">
+              Tell us what you need and we'll put together a clear proposal — scope, timeline and price — before we begin.
+            </p>
+            <div class="cta__actions">
+              <a href="/contact" class="btn btn--primary btn--lg"><%= service.cta %> <i data-lucide="arrow-right"></i></a>
+              <a href="/services" class="btn btn--ghost btn--lg">See all services</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('partials/footer') %>
+
+    <button class="to-top" id="toTop" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
+
+    <%- include('partials/scripts') %>
+  </body>
+</html>

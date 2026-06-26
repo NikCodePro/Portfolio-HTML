@@ -13,8 +13,9 @@
         <% }); %>
       </ul>
     <% } %>
-    <a class="service-card__link" href="<%= isFull ? '/contact' : '/services' %>">
-      <%= isFull ? 'Get a quote' : 'Learn more' %> <i data-lucide="arrow-right"></i>
+    <a class="service-card__link" href="/services/<%= s.id %>">
+      <%= isFull ? 'View details' : 'Learn more' %> <i data-lucide="arrow-right"></i>
     </a>
   </article>
 <% }); %>
+

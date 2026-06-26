@@ -62,6 +62,7 @@
   .why__inner,
   .faq__inner,
   .split,
+  .svc-detail__split,
   .contact-grid,
   .blog-feature {
     grid-template-columns: 1fr;

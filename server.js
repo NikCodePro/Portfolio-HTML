@@ -162,6 +162,12 @@ app.get('/services', (req, res) => {
   res.render('services', { ...siteData, activePage: 'services' });
 });
 
+app.get('/services/:id', (req, res) => {
+  const service = siteData.services.find(s => s.id === req.params.id);
+  if (!service) return res.redirect('/services');
+  res.render('service-detail', { ...siteData, activePage: 'services', service });
+});
+
 app.get('/work', (req, res) => {
   res.render('work', { ...siteData, activePage: 'work' });
 });
