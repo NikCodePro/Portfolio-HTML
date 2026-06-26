@@ -122,7 +122,7 @@
           </div>
         </div>
         <div class="info-label" style="margin-bottom: 8px;">Project Details / Message</div>
-        <div class="message-box"><%= message %></div>
+        <div class="message-box"><%= message && message.trim() ? message : 'No additional details provided.' %></div>
       </div>
       <div class="footer">
         TechNeural Portfolio Server &bull; Automated System

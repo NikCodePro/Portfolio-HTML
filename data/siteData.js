@@ -148,10 +148,16 @@ const siteData = {
 
   /* ---------- Team (About) ---------- */
   team: [
-    { initial: "N", name: "Nikhil Verma", role: "Founder & Lead Engineer", bio: "Turns coffee into architecture and keeps everyone shipping." },
-    { initial: "A", name: "Aanya Rao", role: "Head of Design", bio: "Makes complex things feel effortless. Allergic to clutter." },
-    { initial: "R", name: "Rohan Mehta", role: "AI & Data Lead", bio: "Finds the spots where AI genuinely helps — and where it doesn't." },
-    { initial: "M", name: "Maya Singh", role: "Growth & Strategy", bio: "Obsessed with the numbers that actually matter to your business." },
+    {
+      initial: "N",
+      name: "Nikhil Verma",
+      role: "Founder & Lead Engineer",
+      bio: "Turns coffee into architecture and keeps everyone shipping.",
+      socials: {
+        instagram: "https://www.instagram.com/__nikkverma__/",
+        linkedin: "https://www.linkedin.com/in/nikhil-verma-5a997a202/"
+      }
+    }
   ],
 
   /* ---------- Portfolio ---------- */

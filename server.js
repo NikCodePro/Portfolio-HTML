@@ -178,8 +178,8 @@ app.get('/contact', (req, res) => {
 app.post('/api/contact', async (req, res) => {
   const { name, email, phone, service, message } = req.body;
 
-  if (!name || !email || !message) {
-    return res.status(400).json({ success: false, error: 'Full name, email, and message are required.' });
+  if (!name || !email || !phone || !service) {
+    return res.status(400).json({ success: false, error: 'Full name, email, phone number, and service are required.' });
   }
 
   try {

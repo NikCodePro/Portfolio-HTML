@@ -123,7 +123,7 @@
             <div class="details-item"><strong>Service:</strong> <%= service %></div>
           <% } %>
           <div class="details-item" style="margin-top: 8px; font-style: italic; color: #b1a7d1;">
-            "<%= message.length > 120 ? message.substring(0, 120) + '...' : message %>"
+            "<%= message && message.trim() ? (message.length > 120 ? message.substring(0, 120) + '...' : message) : 'No additional details provided.' %>"
           </div>
         </div>
 

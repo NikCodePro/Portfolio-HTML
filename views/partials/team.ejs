@@ -4,5 +4,42 @@
     <h4><%= m.name %></h4>
     <span class="team-card__role"><%= m.role %></span>
     <p><%= m.bio %></p>
+    <% if (m.socials) { %>
+      <div class="team-card__socials" style="margin-top: 18px; display: flex; gap: 12px; justify-content: center;">
+        <% if (m.socials.linkedin) { %>
+          <a href="<%= m.socials.linkedin %>" target="_blank" rel="noopener" aria-label="LinkedIn" class="team-social-link">
+            <i data-lucide="linkedin"></i>
+          </a>
+        <% } %>
+        <% if (m.socials.instagram) { %>
+          <a href="<%= m.socials.instagram %>" target="_blank" rel="noopener" aria-label="Instagram" class="team-social-link">
+            <i data-lucide="instagram"></i>
+          </a>
+        <% } %>
+      </div>
+    <% } %>
   </div>
 <% }); %>
+
+<style>
+.team-social-link {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: var(--surface-2);
+  border: 1px solid var(--stroke);
+  color: var(--muted);
+  transition: transform 0.3s var(--ease), background 0.3s, color 0.3s;
+}
+.team-social-link:hover {
+  transform: translateY(-2px);
+  background: var(--grad);
+  color: #fff;
+}
+.team-social-link i {
+  width: 18px;
+  height: 18px;
+}
+</style>

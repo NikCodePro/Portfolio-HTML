@@ -134,7 +134,9 @@
           ? ""
           : "That email looks off — mind checking?"
       );
-      setErr(msg, msg.value.trim() ? "" : "A few words about your project helps");
+      setErr(phone, phone.value.trim() ? "" : "Please provide your phone number");
+      setErr(service, service.value ? "" : "Please select what you need");
+      setErr(msg, "");
       if (!ok) return;
 
       const btn = form.querySelector('button[type="submit"]');
