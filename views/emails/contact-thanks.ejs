@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Thanks for reaching out! — TechNeural</title>
+  <style>
+    body {
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      background-color: #0b0716;
+      color: #dfdbed;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+    }
+    .wrapper {
+      width: 100%;
+      background-color: #0b0716;
+      padding: 40px 0;
+    }
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      background-color: #120d24;
+      border: 1px solid rgba(124, 58, 237, 0.2);
+      border-radius: 16px;
+      overflow: hidden;
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    }
+    .header {
+      background: linear-gradient(135deg, #7c3aed 0%, #c026d3 100%);
+      padding: 44px 30px;
+      text-align: center;
+    }
+    .header h1 {
+      color: #ffffff;
+      margin: 0;
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .content {
+      padding: 40px 30px;
+      line-height: 1.6;
+    }
+    .content h2 {
+      color: #ffffff;
+      font-size: 20px;
+      margin-top: 0;
+      margin-bottom: 16px;
+    }
+    .content p {
+      font-size: 15px;
+      margin-bottom: 24px;
+      color: #dfdbed;
+    }
+    .details-box {
+      background-color: rgba(255, 255, 255, 0.03);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 28px;
+    }
+    .details-title {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #9d8ec2;
+      margin-bottom: 8px;
+      font-weight: 700;
+    }
+    .details-item {
+      font-size: 14px;
+      color: #ffffff;
+      margin-bottom: 6px;
+    }
+    .details-item:last-child {
+      margin-bottom: 0;
+    }
+    .btn {
+      display: inline-block;
+      background: linear-gradient(135deg, #7c3aed 0%, #c026d3 100%);
+      color: #ffffff !important;
+      text-decoration: none;
+      padding: 12px 28px;
+      border-radius: 9999px;
+      font-weight: 600;
+      font-size: 15px;
+      text-align: center;
+      box-shadow: 0 4px 14px rgba(124, 58, 237, 0.35);
+    }
+    .footer {
+      text-align: center;
+      padding: 30px;
+      border-top: 1px solid rgba(255, 255, 255, 0.05);
+      font-size: 12px;
+      color: #72629b;
+    }
+    .socials {
+      margin-top: 16px;
+    }
+    .socials a {
+      color: #7c3aed;
+      text-decoration: none;
+      margin: 0 10px;
+      font-weight: 500;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <div class="container">
+      <div class="header">
+        <h1>Thank you for contacting us!</h1>
+      </div>
+      <div class="content">
+        <h2>Hey <%= name %>,</h2>
+        <p>Thanks for reaching out to TechNeural. We've received your request about <strong><%= service || 'your project' %></strong>, and a real member of our team is already looking it over.</p>
+        <p>You can expect to hear back from us with some honest thoughts and recommended next steps within 24 hours.</p>
+        
+        <div class="details-box">
+          <div class="details-title">Summary of your message:</div>
+          <% if (service) { %>
+            <div class="details-item"><strong>Service:</strong> <%= service %></div>
+          <% } %>
+          <div class="details-item" style="margin-top: 8px; font-style: italic; color: #b1a7d1;">
+            "<%= message.length > 120 ? message.substring(0, 120) + '...' : message %>"
+          </div>
+        </div>
+
+        <p>If you're in a hurry or want to share more assets, feel free to drop us a line on WhatsApp directly.</p>
+        <div style="text-align: center; margin: 30px 0;">
+          <a href="https://wa.me/919193257838" class="btn" target="_blank">Chat on WhatsApp</a>
+        </div>
+      </div>
+      <div class="footer">
+        &copy; <%= new Date().getFullYear() %> TechNeural. All rights reserved.<br>
+        We build premium websites, AI automations, and growth workflows.
+        <div class="socials">
+          <a href="https://www.linkedin.com/company/107535474/" target="_blank">LinkedIn</a> &middot;
+          <a href="https://www.instagram.com/the.techneural/" target="_blank">Instagram</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

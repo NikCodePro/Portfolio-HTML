@@ -1,0 +1,6 @@
+<% faqs.forEach(function(f) { %>
+  <div class="faq-item">
+    <button class="faq-item__q"><span><%= f.q %></span><i data-lucide="plus"></i></button>
+    <div class="faq-item__a"><p><%= f.a %></p></div>
+  </div>
+<% }); %>

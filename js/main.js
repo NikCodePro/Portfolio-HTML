@@ -116,6 +116,8 @@
       e.preventDefault();
       const name = form.querySelector("#cName");
       const email = form.querySelector("#cEmail");
+      const phone = form.querySelector("#cPhone");
+      const service = form.querySelector("#cService");
       const msg = form.querySelector("#cMessage");
       let ok = true;
       const setErr = (input, text) => {
@@ -139,13 +141,37 @@
       const original = btn.innerHTML;
       btn.disabled = true;
       btn.textContent = "Sending…";
-      setTimeout(() => {
+
+      fetch('/api/contact', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          name: name.value.trim(),
+          email: email.value.trim(),
+          phone: phone ? phone.value.trim() : '',
+          service: service ? service.value : '',
+          message: msg.value.trim()
+        })
+      })
+      .then(res => res.json())
+      .then(data => {
         btn.disabled = false;
         btn.innerHTML = original;
         renderIcons();
-        form.reset();
-        showToast("🎉 Thanks! We'll be in touch within a day.");
-      }, 1400);
+        if (data.success) {
+          form.reset();
+          showToast("🎉 Thanks! We'll be in touch within a day.");
+        } else {
+          showToast("❌ " + (data.error || "Something went wrong. Please try again."));
+        }
+      })
+      .catch(err => {
+        btn.disabled = false;
+        btn.innerHTML = original;
+        renderIcons();
+        showToast("❌ Network error. Please check your connection.");
+        console.error(err);
+      });
     });
   }
 
@@ -153,10 +179,76 @@
   document.querySelectorAll(".js-newsletter").forEach((f) => {
     f.addEventListener("submit", (e) => {
       e.preventDefault();
-      f.reset();
-      showToast("✅ You're subscribed. Talk soon!");
+      const emailInput = f.querySelector('input[type="email"]');
+      if (!emailInput || !emailInput.value.trim()) return;
+
+      const btn = f.querySelector('button[type="submit"]');
+      const originalText = btn ? btn.textContent : '';
+      if (btn) {
+        btn.disabled = true;
+        btn.textContent = "Subscribing…";
+      }
+
+      fetch('/api/newsletter', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ email: emailInput.value.trim() })
+      })
+      .then(res => res.json())
+      .then(data => {
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = originalText;
+        }
+        if (data.success) {
+          f.reset();
+          showToast("✅ You're subscribed. Talk soon!");
+        } else {
+          showToast("❌ " + (data.error || "Subscription failed."));
+        }
+      })
+      .catch(err => {
+        if (btn) {
+          btn.disabled = false;
+          btn.textContent = originalText;
+        }
+        showToast("❌ Network error. Please try again.");
+        console.error(err);
+      });
     });
   });
+
+  /* ---------- Work Filter (SSR-compatible toggle) ---------- */
+  const workFilter = document.getElementById("workFilter");
+  const workGrid = document.getElementById("workGrid");
+  if (workFilter && workGrid) {
+    const cards = workGrid.querySelectorAll(".work-card");
+    workFilter.addEventListener("click", (e) => {
+      const btn = e.target.closest(".filter-btn");
+      if (!btn) return;
+      
+      const cat = btn.dataset.cat;
+      
+      // Update active button state
+      workFilter.querySelectorAll(".filter-btn").forEach((b) => {
+        b.classList.toggle("is-active", b === btn);
+      });
+      
+      // Toggle card visibility
+      cards.forEach((card) => {
+        if (cat === "All" || card.dataset.cat === cat) {
+          card.style.display = "";
+        } else {
+          card.style.display = "none";
+        }
+      });
+      
+      // Refresh GSAP ScrollTrigger if active
+      if (window.ScrollTrigger) {
+        ScrollTrigger.refresh();
+      }
+    });
+  }
 
   /* ---------- ESC closes mobile menu ---------- */
   document.addEventListener("keydown", (e) => {

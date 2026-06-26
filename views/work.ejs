@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+  <%- include('partials/head') %>
+
+  <body data-page="work">
+    <%- include('partials/header') %>
+
+    <main>
+      <section class="page-hero">
+        <div class="page-hero__glow"></div>
+        <div class="container">
+          <div class="crumb hero-eyebrow"><a href="/">Home</a> <i data-lucide="chevron-right"></i> Work</div>
+          <h1 class="hero-headline">Work we're <span class="grad">genuinely proud of</span></h1>
+          <p class="hero-sub">A slice of what we've shipped. Different industries, different stacks — the same care poured into every one.</p>
+        </div>
+      </section>
+
+      <!-- ===== PORTFOLIO ===== -->
+      <section class="section--tight">
+        <div class="container">
+          <%
+            const cats = ["All", ...new Set(projects.map(p => p.cat))];
+          %>
+          <div class="filter-bar" id="workFilter" data-reveal>
+            <% cats.forEach(function(c) { %>
+              <button class="filter-btn <%= c === 'All' ? 'is-active' : '' %>" data-cat="<%= c %>"><%= c %></button>
+            <% }); %>
+          </div>
+          <div class="work__grid" id="workGrid">
+            <%- include('partials/work_grid') %>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== STATS ===== -->
+      <section class="section--tight">
+        <div class="container">
+          <div class="stats__grid" id="workStats" data-stagger>
+            <%- include('partials/stats', { statsSet: 'work' }) %>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== CTA ===== -->
+      <section class="section">
+        <div class="container">
+          <div class="cta__panel" data-reveal>
+            <div class="cta__glow"></div>
+            <span class="tag tag--light"><i data-lucide="sparkles"></i> Your turn</span>
+            <h2 class="cta__title">Your project could be <span class="grad">next</span></h2>
+            <p class="cta__sub">We take on a handful of new projects each quarter so every client gets our full attention. Let's see if we're a fit.</p>
+            <div class="cta__actions"><a href="/contact" class="btn btn--primary btn--lg">Start your project <i data-lucide="arrow-right"></i></a></div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('partials/footer') %>
+
+    <button class="to-top" id="toTop" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
+
+    <%- include('partials/scripts') %>
+  </body>
+</html>

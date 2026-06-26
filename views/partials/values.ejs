@@ -1,0 +1,7 @@
+<% values.forEach(function(v) { %>
+  <div class="feature-card glass-card">
+    <span class="feature-card__icon"><i data-lucide="<%= v.icon %>"></i></span>
+    <h4><%= v.title %></h4>
+    <p><%= v.desc %></p>
+  </div>
+<% }); %>

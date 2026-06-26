@@ -1,11 +1,10 @@
 /* =====================================================
    TechNeural — Site Data Store
    ALL content for every page lives here. Pages are
-   rendered from this single source by js/render.js.
-   Edit copy / projects / services here — nowhere else.
+   rendered from this single source by server-side EJS templates.
    ===================================================== */
 
-window.APP = {
+const siteData = {
   /* ---------- Brand / contact ---------- */
   site: {
     name: "TechNeural",
@@ -28,12 +27,12 @@ window.APP = {
 
   /* ---------- Navigation ---------- */
   nav: [
-    { label: "Home", href: "index.html", page: "home" },
-    { label: "About", href: "about.html", page: "about" },
-    { label: "Services", href: "services.html", page: "services" },
-    { label: "Work", href: "work.html", page: "work" },
-    { label: "Blog", href: "blog.html", page: "blog" },
-    { label: "Contact", href: "contact.html", page: "contact" },
+    { label: "Home", href: "/", page: "home" },
+    { label: "About", href: "/about", page: "about" },
+    { label: "Services", href: "/services", page: "services" },
+    { label: "Work", href: "/work", page: "work" },
+    { label: "Blog", href: "/blog", page: "blog" },
+    { label: "Contact", href: "/contact", page: "contact" },
   ],
 
   /* ---------- Stat sets (keyed by page) ---------- */
@@ -188,9 +187,11 @@ window.APP = {
   /* ---------- FAQ ---------- */
   faqs: [
     { q: "How quickly can you start?", a: "Most projects kick off within 1–2 weeks of our discovery call. Urgent work? Tell us — we'll find a way to fit you in." },
-    { q: "How much does a project cost?", a: "It depends on scope, but you'll always get a clear, fixed proposal before we begin — no surprise invoices, ever." },
+    { q: "How much does a project cost?", a: "It depends on scope, but you'll always get a fixed proposal before we begin — no surprise invoices, ever." },
     { q: "Do you work with businesses outside your country?", a: "Absolutely. We're remote-first and currently partner with teams across 10+ countries and time zones." },
     { q: "What happens after launch?", a: "Every project includes 30 days of free support, and most clients stay on a light retainer for ongoing growth and updates." },
     { q: "Can you add AI to an existing product?", a: "Yes — we specialize in layering automation and AI assistants onto live products without disrupting what already works." },
   ],
 };
+
+module.exports = siteData;

@@ -1,0 +1,11 @@
+<% testimonials.forEach(function(t) { %>
+  <div class="swiper-slide">
+    <blockquote class="testimonial glass-card">
+      <p>"<%= t.quote %>"</p>
+      <footer>
+        <span class="testimonial__av"><%= t.initial %></span>
+        <cite><strong><%= t.name %></strong><%= t.role %></cite>
+      </footer>
+    </blockquote>
+  </div>
+<% }); %>

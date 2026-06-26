@@ -1,0 +1,192 @@
+<!doctype html>
+<html lang="en">
+  <%- include('partials/head') %>
+
+  <body data-page="home">
+    <%- include('partials/header') %>
+
+    <main>
+      <!-- ===== HERO ===== -->
+      <section class="hero" id="hero">
+        <div class="hero__glow hero__glow--1"></div>
+        <div class="hero__glow hero__glow--2"></div>
+        <div class="container hero__inner">
+          <div class="hero__copy">
+            <span class="hero__eyebrow hero-eyebrow">
+              <span class="hero__eyebrow-dot"></span> AI-Driven Digital Studio
+            </span>
+            <h1 class="hero__title hero-headline">
+              Build smarter. Grow faster with <span class="grad">TechNeural</span>.
+            </h1>
+            <p class="hero__sub hero-sub">
+              We design high-performance websites, intelligent AI automation, and growth systems that turn visitors into customers — and customers into momentum.
+            </p>
+            <div class="hero__actions hero-actions">
+              <a href="/contact" class="btn btn--primary btn--lg">Start Your Project <i data-lucide="arrow-right"></i></a>
+              <a href="/work" class="btn btn--ghost btn--lg"><i data-lucide="play"></i> See Our Work</a>
+            </div>
+            <div class="hero__trust hero-actions">
+              <div class="hero__avatars">
+                <span>A</span><span>R</span><span>M</span><span>+</span>
+              </div>
+              <p>Trusted by <strong>150+</strong> founders &amp; teams worldwide</p>
+            </div>
+          </div>
+
+          <div class="hero__visual hero-visual">
+            <div class="hero__card hero__card--main" data-float="1">
+              <div class="hero__card-head">
+                <span class="hero__card-title"><i data-lucide="activity"></i> Growth Overview</span>
+                <span class="pill pill--green">+38%</span>
+              </div>
+              <div class="hero__chart">
+                <span style="--h: 40%"></span><span style="--h: 62%"></span><span style="--h: 48%"></span>
+                <span style="--h: 80%"></span><span style="--h: 66%"></span><span style="--h: 95%"></span>
+                <span style="--h: 78%"></span>
+              </div>
+            </div>
+            <div class="hero__card hero__card--ai" data-float="2">
+              <div class="hero__ai-row">
+                <span class="hero__ai-avatar"><i data-lucide="bot"></i></span>
+                <div>
+                  <strong>AI Assistant</strong>
+                  <p>Automated 2,400 replies this week</p>
+                </div>
+              </div>
+            </div>
+            <div class="hero__card hero__card--stat" data-float="3">
+              <span class="hero__stat-num">99.9%</span><span class="hero__stat-label">Uptime</span>
+            </div>
+            <div class="hero__card hero__card--code" data-float="4">
+              <div class="hero__code-dots"><i></i><i></i><i></i></div>
+              <code><span class="c-key">deploy</span>(<span class="c-str">"techneural"</span>)<br />→ <span class="c-ok">live in 1.2s ✓</span></code>
+            </div>
+          </div>
+        </div>
+        <a href="#stats" class="hero__scroll" data-scroll aria-label="Scroll down"><i data-lucide="mouse"></i></a>
+      </section>
+
+      <!-- ===== STATS ===== -->
+      <section class="section--tight" id="stats">
+        <div class="container">
+          <div class="stats__grid" id="homeStats" data-stagger>
+            <%- include('partials/stats', { statsSet: 'home' }) %>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== SERVICES ===== -->
+      <section class="section" id="services">
+        <div class="container">
+          <div class="section__head" data-reveal>
+            <span class="tag"><i data-lucide="layers"></i> What we do</span>
+            <h2 class="section__title">Services built to <span class="grad">move the needle</span></h2>
+            <p class="section__lead">
+              From first pixel to predictable growth — everything you need to launch, automate, and scale, delivered by one senior team.
+            </p>
+          </div>
+          <div class="services__grid" id="homeServices" data-stagger>
+            <%- include('partials/services_grid', { fullServices: false }) %>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== WHY US ===== -->
+      <section class="section why">
+        <div class="container why__inner">
+          <div data-reveal>
+            <span class="tag"><i data-lucide="badge-check"></i> Why TechNeural</span>
+            <h2 class="section__title">A partner that builds for <span class="grad">outcomes</span>, not just output</h2>
+            <p class="section__lead">
+              We blend design taste, deep engineering and an automation-first mindset — so what we ship looks premium, performs fast, and keeps paying off long after launch.
+            </p>
+            <ul class="why__list" id="homeWhyList">
+              <%- include('partials/why_list') %>
+            </ul>
+            <a href="/about" class="btn btn--primary">More about us <i data-lucide="arrow-right"></i></a>
+          </div>
+          <div class="why__cards" id="homeFeatures" data-stagger>
+            <%- include('partials/features') %>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== PROCESS ===== -->
+      <section class="section">
+        <div class="container">
+          <div class="section__head" data-reveal>
+            <span class="tag"><i data-lucide="route"></i> How we work</span>
+            <h2 class="section__title">A clear path from <span class="grad">idea to scale</span></h2>
+            <p class="section__lead">
+              Five focused steps. Zero guesswork. You always know what's happening and what's next.
+            </p>
+          </div>
+          <div class="process__track" id="homeProcess" data-stagger>
+            <%- include('partials/process') %>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== WORK PREVIEW ===== -->
+      <section class="section">
+        <div class="container">
+          <div class="section__head" data-reveal>
+            <span class="tag"><i data-lucide="folder-open"></i> Featured work</span>
+            <h2 class="section__title">Recent projects we're <span class="grad">proud of</span></h2>
+            <p class="section__lead">
+              A glimpse at what happens when strategy, design and engineering pull in the same direction.
+            </p>
+          </div>
+          <div class="work__grid" id="homeWork" data-stagger>
+            <%- include('partials/work_grid', { projectsList: projects.slice(0, 3) }) %>
+          </div>
+          <div style="text-align: center; margin-top: 44px" data-reveal>
+            <a href="/work" class="btn btn--ghost btn--lg">View all projects <i data-lucide="arrow-right"></i></a>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== TESTIMONIALS ===== -->
+      <section class="section">
+        <div class="container">
+          <div class="section__head" data-reveal>
+            <span class="tag"><i data-lucide="quote"></i> Kind words</span>
+            <h2 class="section__title">Teams that <span class="grad">grew with us</span></h2>
+          </div>
+        </div>
+        <div class="swiper testimonials__swiper" data-reveal>
+          <div class="swiper-wrapper" id="homeTestimonials">
+            <%- include('partials/testimonials') %>
+          </div>
+          <div class="swiper-pagination"></div>
+        </div>
+      </section>
+
+      <!-- ===== FINAL CTA ===== -->
+      <section class="section" id="contact-cta">
+        <div class="container">
+          <div class="cta__panel" data-reveal>
+            <div class="cta__glow"></div>
+            <span class="tag tag--light"><i data-lucide="sparkles"></i> Let's build</span>
+            <h2 class="cta__title">Ready to build your <span class="grad">growth engine</span>?</h2>
+            <p class="cta__sub">
+              Whether you need a website, AI automation, or a full growth strategy — let's turn your idea into something that performs. Book a free, no-pressure consultation.
+            </p>
+            <div class="cta__actions">
+              <a href="/contact" class="btn btn--primary btn--lg">Book a Free Consultation <i data-lucide="arrow-right"></i></a>
+              <a href="/work" class="btn btn--ghost btn--lg">Explore our work</a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('partials/footer') %>
+
+    <button class="to-top" id="toTop" aria-label="Back to top">
+      <i data-lucide="arrow-up"></i>
+    </button>
+
+    <%- include('partials/scripts') %>
+  </body>
+</html>

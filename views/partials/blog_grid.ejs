@@ -1,0 +1,20 @@
+<% 
+  const displayPosts = typeof posts !== 'undefined' ? posts : blog.filter(b => !b.feature);
+%>
+<% displayPosts.forEach(function(b) { %>
+  <article class="blog-card glass-card">
+    <div class="blog-card__img"><img src="<%= b.img %>" alt="<%= b.title %>" loading="lazy" /></div>
+    <div class="blog-card__body">
+      <div class="blog-meta">
+        <span class="blog-tag"><%= b.tag %></span>
+        <span><%= b.date %></span>
+        <span><%= b.read %></span>
+      </div>
+      <h3><%= b.title %></h3>
+      <p><%= b.excerpt %></p>
+      <div class="blog-author">
+        <span class="blog-author__av"><%= b.author[0] %></span> By <%= b.author %>
+      </div>
+    </div>
+  </article>
+<% }); %>

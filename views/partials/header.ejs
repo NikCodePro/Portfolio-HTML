@@ -1,0 +1,22 @@
+<header class="nav" id="nav">
+  <div class="container nav__inner">
+    <a href="/" class="nav__logo">
+      <img src="/<%= site.logo %>" alt="<%= site.name %>" />
+    </a>
+    <nav class="nav__links">
+      <% nav.forEach(function(l) { %>
+        <a href="<%= l.href %>" class="<%= l.page === activePage ? 'is-active' : '' %>"><%= l.label %></a>
+      <% }); %>
+    </nav>
+    <a href="/contact" class="btn btn--primary nav__cta">Book a Call <i data-lucide="arrow-up-right"></i></a>
+    <button class="nav__burger" id="burger" aria-label="Open menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+  </div>
+  <div class="mobile-menu" id="mobileMenu">
+    <% nav.forEach(function(l) { %>
+      <a href="<%= l.href %>" class="<%= l.page === activePage ? 'is-active' : '' %>"><%= l.label %></a>
+    <% }); %>
+    <a href="/contact" class="btn btn--primary">Book a Call</a>
+  </div>
+</header>

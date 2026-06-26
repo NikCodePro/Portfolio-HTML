@@ -1,0 +1,10 @@
+<% 
+  const set = typeof statsSet !== 'undefined' ? statsSet : 'home';
+  const list = stats[set] || stats.home;
+%>
+<% list.forEach(function(s) { %>
+  <div class="stat-card">
+    <span class="stat-card__num"><span data-count="<%= s.value %>" data-suffix="<%= s.suffix %>">0</span></span>
+    <span class="stat-card__label"><%= s.label %></span>
+  </div>
+<% }); %>

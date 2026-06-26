@@ -1,0 +1,8 @@
+<% team.forEach(function(m) { %>
+  <div class="team-card glass-card">
+    <span class="team-card__av"><%= m.initial %></span>
+    <h4><%= m.name %></h4>
+    <span class="team-card__role"><%= m.role %></span>
+    <p><%= m.bio %></p>
+  </div>
+<% }); %>

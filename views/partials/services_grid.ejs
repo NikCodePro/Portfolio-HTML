@@ -1,0 +1,20 @@
+<% 
+  const isFull = typeof fullServices !== 'undefined' ? fullServices : false;
+%>
+<% services.forEach(function(s) { %>
+  <article class="service-card glass-card" data-tilt>
+    <span class="service-card__icon"><i data-lucide="<%= s.icon %>"></i></span>
+    <h3><%= s.title %></h3>
+    <p><%= s.desc %></p>
+    <% if (isFull) { %>
+      <ul class="mini-list">
+        <% s.points.forEach(function(p) { %>
+          <li><i data-lucide="check"></i> <%= p %></li>
+        <% }); %>
+      </ul>
+    <% } %>
+    <a class="service-card__link" href="<%= isFull ? '/contact' : '/services' %>">
+      <%= isFull ? 'Get a quote' : 'Learn more' %> <i data-lucide="arrow-right"></i>
+    </a>
+  </article>
+<% }); %>

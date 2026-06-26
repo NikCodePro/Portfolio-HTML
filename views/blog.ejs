@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <%- include('partials/head') %>
+
+  <body data-page="blog">
+    <%- include('partials/header') %>
+
+    <main>
+      <section class="page-hero">
+        <div class="page-hero__glow"></div>
+        <div class="container">
+          <div class="crumb hero-eyebrow"><a href="/">Home</a> <i data-lucide="chevron-right"></i> Blog</div>
+          <h1 class="hero-headline">Notes from the <span class="grad">workshop</span></h1>
+          <p class="hero-sub">No thought-leadership fluff. Just honest write-ups on what we're building, breaking and learning along the way.</p>
+        </div>
+      </section>
+
+      <section class="section--tight">
+        <div class="container">
+          <%
+            const feat = blog.find(b => b.feature);
+            const rest = blog.filter(b => !b.feature);
+          %>
+          <% if (feat) { %>
+            <div class="blog-feature glass-card" id="blogFeature" data-reveal>
+              <div class="blog-feature__img"><img src="<%= feat.img %>" alt="<%= feat.title %>" /></div>
+              <div class="blog-feature__body">
+                <div class="blog-meta">
+                  <span class="blog-tag"><%= feat.tag %></span>
+                  <span><%= feat.date %></span>
+                  <span><%= feat.read %> read</span>
+                </div>
+                <h2><%= feat.title %></h2>
+                <p><%= feat.excerpt %></p>
+                <a href="/contact" class="btn btn--primary">Read article <i data-lucide="arrow-right"></i></a>
+              </div>
+            </div>
+          <% } %>
+          <div class="blog__grid" id="blogGrid" data-stagger>
+            <%- include('partials/blog_grid', { posts: rest }) %>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== NEWSLETTER CTA ===== -->
+      <section class="section">
+        <div class="container">
+          <div class="cta__panel" data-reveal>
+            <div class="cta__glow"></div>
+            <span class="tag tag--light"><i data-lucide="mail"></i> Newsletter</span>
+            <h2 class="cta__title">Get the next one <span class="grad">in your inbox</span></h2>
+            <p class="cta__sub">One thoughtful email every few weeks. Real lessons from real projects — and absolutely no spam.</p>
+            <form class="cta__actions js-newsletter" style="max-width:460px;margin-inline:auto">
+              <input type="email" required placeholder="you@email.com" aria-label="Email address"
+                style="flex:1;min-width:200px;padding:14px 18px;border-radius:9999px;border:1px solid rgba(255,255,255,.4);background:rgba(255,255,255,.14);color:#fff;outline:none" />
+              <button type="submit" class="btn btn--primary">Subscribe</button>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('partials/footer') %>
+
+    <button class="to-top" id="toTop" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
+
+    <%- include('partials/scripts') %>
+  </body>
+</html>

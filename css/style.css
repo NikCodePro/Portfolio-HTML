@@ -115,11 +115,19 @@ body::after {
   padding-inline: 24px;
 }
 .section {
-  padding-block: 116px;
+  padding-block: 76px;
   position: relative;
 }
 .section--tight {
-  padding-block: 54px;
+  padding-block: 40px;
+}
+
+/* Prevent double padding when sections stack consecutively */
+.section + .section,
+.section + .section--tight,
+.section--tight + .section,
+.section--tight + .section--tight {
+  padding-top: 0;
 }
 
 /* ---------- Typography ---------- */

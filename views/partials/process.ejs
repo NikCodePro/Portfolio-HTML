@@ -1,0 +1,8 @@
+<% process.forEach(function(p) { %>
+  <div class="process-step glass-card">
+    <span class="process-step__num"><%= p.num %></span>
+    <span class="process-step__icon"><i data-lucide="<%= p.icon %>"></i></span>
+    <h4><%= p.title %></h4>
+    <p><%= p.desc %></p>
+  </div>
+<% }); %>

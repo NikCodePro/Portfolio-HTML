@@ -1,0 +1,21 @@
+<% 
+  const displayList = typeof projectsList !== 'undefined' ? projectsList : projects;
+%>
+<% displayList.forEach(function(p) { %>
+  <article class="work-card glass-card" data-cat="<%= p.cat %>">
+    <div class="work-card__media">
+      <img src="<%= p.img %>" alt="<%= p.title %>" loading="lazy" />
+      <span class="work-card__cat"><%= p.cat %></span>
+      <div class="work-card__overlay"><a href="/contact">View project <i data-lucide="arrow-up-right"></i></a></div>
+    </div>
+    <div class="work-card__body">
+      <h3><%= p.title %></h3>
+      <p><%= p.desc %></p>
+      <div class="work-card__tags">
+        <% p.tags.forEach(function(t) { %>
+          <span><%= t %></span>
+        <% }); %>
+      </div>
+    </div>
+  </article>
+<% }); %>

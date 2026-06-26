@@ -1,0 +1,7 @@
+<% features.forEach(function(f) { %>
+  <div class="feature-card glass-card">
+    <span class="feature-card__icon"><i data-lucide="<%= f.icon %>"></i></span>
+    <h4><%= f.title %></h4>
+    <p><%= f.desc %></p>
+  </div>
+<% }); %>

@@ -1,40 +1,16 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>About — TechNeural | The People Behind the Pixels</title>
-    <meta name="description" content="Meet TechNeural: a remote-first studio of engineers, designers and strategists turning ideas into premium digital products since 2014." />
-    <meta name="theme-color" content="#f6f4fc" />
-    <link rel="icon" type="image/png" href="assets/icon.png" />
-    <link rel="apple-touch-icon" href="assets/icon.png" />
-    <script>
-      document.documentElement.classList.add("gsap-loading");
-      window.addEventListener("load", function () { if (!window.gsap) document.documentElement.classList.remove("gsap-loading"); });
-    </script>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/animations.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-YC9C4GYSYR"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag() { dataLayer.push(arguments); }
-      gtag("js", new Date());
-      gtag("config", "G-YC9C4GYSYR");
-    </script>
-  </head>
+  <%- include('partials/head') %>
 
   <body data-page="about">
+    <%- include('partials/header') %>
+
     <main>
       <!-- ===== PAGE HERO ===== -->
       <section class="page-hero">
         <div class="page-hero__glow"></div>
         <div class="container">
-          <div class="crumb hero-eyebrow"><a href="index.html">Home</a> <i data-lucide="chevron-right"></i> About</div>
+          <div class="crumb hero-eyebrow"><a href="/">Home</a> <i data-lucide="chevron-right"></i> About</div>
           <h1 class="hero-headline">A small team with a <span class="grad">big soft spot</span> for good software</h1>
           <p class="hero-sub">Engineers, designers and strategists who genuinely enjoy the craft. We've spent a decade helping people turn "what if" into something real and working.</p>
         </div>
@@ -43,7 +19,9 @@
       <!-- ===== STATS ===== -->
       <section class="section--tight">
         <div class="container">
-          <div class="stats__grid" id="aboutStats" data-stagger></div>
+          <div class="stats__grid" id="aboutStats" data-stagger>
+            <%- include('partials/stats', { statsSet: 'about' }) %>
+          </div>
         </div>
       </section>
 
@@ -56,7 +34,7 @@
               <h2>It started with one stubborn belief</h2>
               <p>That world-class technology shouldn't only be for companies with world-class budgets. Back in 2014 we were a handful of engineers building things on the side for people we believed in.</p>
               <p>That belief never left. Today we're a remote-first studio of fifty, but we still pick projects the same way — by whether we'd be proud to put our name on them.</p>
-              <a href="contact.html" class="btn btn--primary" style="margin-top:8px">Work with us <i data-lucide="arrow-right"></i></a>
+              <a href="/contact" class="btn btn--primary" style="margin-top:8px">Work with us <i data-lucide="arrow-right"></i></a>
             </div>
             <div class="split__media" data-reveal>
               <img src="https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&q=80&w=1200" alt="The TechNeural team" loading="lazy" />
@@ -73,7 +51,9 @@
             <h2 class="section__title">The values we <span class="grad">actually live by</span></h2>
             <p class="section__lead">Not poster slogans — these are the things we argue about, hire for, and hold each other to.</p>
           </div>
-          <div class="features__grid features__grid--3" id="aboutValues" data-stagger></div>
+          <div class="features__grid features__grid--3" id="aboutValues" data-stagger>
+            <%- include('partials/values') %>
+          </div>
         </div>
       </section>
 
@@ -84,7 +64,9 @@
             <span class="tag"><i data-lucide="milestone"></i> The journey</span>
             <h2 class="section__title">A decade, in <span class="grad">a few moments</span></h2>
           </div>
-          <div class="timeline" id="aboutTimeline" data-reveal></div>
+          <div class="timeline" id="aboutTimeline" data-reveal>
+            <%- include('partials/timeline') %>
+          </div>
         </div>
       </section>
 
@@ -96,7 +78,9 @@
             <h2 class="section__title">A few of the faces <span class="grad">behind the work</span></h2>
             <p class="section__lead">Senior, kind, and a little obsessed with getting things right.</p>
           </div>
-          <div class="team__grid" id="aboutTeam" data-stagger></div>
+          <div class="team__grid" id="aboutTeam" data-stagger>
+            <%- include('partials/team') %>
+          </div>
         </div>
       </section>
 
@@ -108,25 +92,16 @@
             <span class="tag tag--light"><i data-lucide="sparkles"></i> Let's talk</span>
             <h2 class="cta__title">Like how we think? <span class="grad">Let's build together</span></h2>
             <p class="cta__sub">Whether you're at the napkin-sketch stage or scaling fast, we'd love to hear what you're working on.</p>
-            <div class="cta__actions"><a href="contact.html" class="btn btn--primary btn--lg">Get in touch <i data-lucide="arrow-right"></i></a></div>
+            <div class="cta__actions"><a href="/contact" class="btn btn--primary btn--lg">Get in touch <i data-lucide="arrow-right"></i></a></div>
           </div>
         </div>
       </section>
     </main>
 
+    <%- include('partials/footer') %>
+
     <button class="to-top" id="toTop" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="https://unpkg.com/split-type@0.3.4/umd/index.min.js"></script>
-    <script src="https://unpkg.com/lucide@latest"></script>
-    <script src="js/app.js"></script>
-    <script src="js/render.js"></script>
-    <script src="js/smooth-scroll.js"></script>
-    <script src="js/slider.js"></script>
-    <script src="js/animations.js"></script>
-    <script src="js/main.js"></script>
+    <%- include('partials/scripts') %>
   </body>
 </html>

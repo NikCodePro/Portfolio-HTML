@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+  <%- include('partials/head') %>
+
+  <body data-page="contact">
+    <%- include('partials/header') %>
+
+    <main>
+      <section class="page-hero">
+        <div class="page-hero__glow"></div>
+        <div class="container">
+          <div class="crumb hero-eyebrow"><a href="/">Home</a> <i data-lucide="chevron-right"></i> Contact</div>
+          <h1 class="hero-headline">Let's build something <span class="grad">worth talking about</span></h1>
+          <p class="hero-sub">Tell us what's on your mind. A real person reads every message and you'll hear back within a day — promise.</p>
+        </div>
+      </section>
+
+      <!-- ===== CONTACT ===== -->
+      <section class="section--tight">
+        <div class="container">
+          <div class="contact-grid">
+            <div data-reveal>
+              <h2 style="font-size:clamp(1.5rem,3vw,2.1rem)">Prefer a quicker route?</h2>
+              <p style="color:var(--muted);margin-top:8px">Drop us a line directly — whatever's easiest for you.</p>
+              <div class="contact-methods">
+                <a class="method" href="mailto:<%= site.email %>">
+                  <span class="method__icon"><i data-lucide="mail"></i></span>
+                  <div><h4>Email us</h4><div class="val"><%= site.email %></div></div>
+                </a>
+                <a class="method" href="https://wa.me/<%= site.whatsapp %>" target="_blank" rel="noopener">
+                  <span class="method__icon"><i data-lucide="message-circle"></i></span>
+                  <div><h4>WhatsApp</h4><div class="val"><%= site.phone %></div></div>
+                </a>
+                <div class="method">
+                  <span class="method__icon"><i data-lucide="clock"></i></span>
+                  <div><h4>Hours</h4><div class="val"><%= site.hours %></div></div>
+                </div>
+              </div>
+            </div>
+
+            <div data-reveal>
+              <div class="form-card glass-card">
+                <h2>Send us a message</h2>
+                <p>We usually reply within a few hours.</p>
+                <form id="contactForm" novalidate>
+                  <div class="field">
+                    <label for="cName">Full name</label>
+                    <input type="text" id="cName" name="name" placeholder="Jane Doe" required />
+                    <span class="err"></span>
+                  </div>
+                  <div class="field">
+                    <label for="cEmail">Email address</label>
+                    <input type="email" id="cEmail" name="email" placeholder="jane@company.com" required />
+                    <span class="err"></span>
+                  </div>
+                  <div class="field">
+                    <label for="cPhone">Phone number (optional)</label>
+                    <input type="tel" id="cPhone" name="phone" placeholder="+1 (555) 000-0000" />
+                  </div>
+                  <div class="field">
+                    <label for="cService">What do you need?</label>
+                    <select id="cService" name="service">
+                      <option value="">Choose a service…</option>
+                      <% services.forEach(function(s) { %>
+                        <option value="<%= s.title %>"><%= s.title %></option>
+                      <% }); %>
+                      <option value="Something else">Something else</option>
+                    </select>
+                  </div>
+                  <div class="field">
+                    <label for="cMessage">Tell us about your project</label>
+                    <textarea id="cMessage" name="message" placeholder="What are you hoping to build? What does success look like?" required></textarea>
+                    <span class="err"></span>
+                  </div>
+                  <button type="submit" class="btn btn--primary" style="width:100%">Send message <i data-lucide="send"></i></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== FAQ ===== -->
+      <section class="section">
+        <div class="container faq__inner">
+          <div class="section__head section__head--left" data-reveal>
+            <span class="tag"><i data-lucide="help-circle"></i> FAQ</span>
+            <h2 class="section__title">Quick <span class="grad">answers</span></h2>
+            <p class="section__lead">Still unsure about something? Just ask in the form — we're happy to help.</p>
+          </div>
+          <div class="faq__list" id="contactFaq" data-stagger>
+            <%- include('partials/faq') %>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <%- include('partials/footer') %>
+
+    <button class="to-top" id="toTop" aria-label="Back to top"><i data-lucide="arrow-up"></i></button>
+
+    <%- include('partials/scripts') %>
+  </body>
+</html>

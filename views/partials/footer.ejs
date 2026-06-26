@@ -1,0 +1,48 @@
+<footer class="footer">
+  <div class="container">
+    <div class="footer__grid">
+      <div class="footer__brand">
+        <a href="/" class="nav__logo">
+          <img src="/<%= site.logoFooter %>" alt="<%= site.name %>" />
+        </a>
+        <p><%= site.tagline %></p>
+        <div class="footer__socials">
+          <% site.socials.forEach(function(s) { %>
+            <a href="<%= s.url %>" target="_blank" rel="noopener" aria-label="<%= s.label %>">
+              <i data-lucide="<%= s.icon %>"></i>
+            </a>
+          <% }); %>
+        </div>
+      </div>
+      <div class="footer__col">
+        <h4>Company</h4>
+        <ul>
+          <li><a href="/about">About</a></li>
+          <li><a href="/work">Work</a></li>
+          <li><a href="/blog">Blog</a></li>
+          <li><a href="/contact">Contact</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Services</h4>
+        <ul>
+          <% services.slice(0, 4).forEach(function(s) { %>
+            <li><a href="/services"><%= s.title %></a></li>
+          <% }); %>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Get in touch</h4>
+        <ul>
+          <li><a href="mailto:<%= site.email %>"><i data-lucide="mail"></i> <%= site.email %></a></li>
+          <li><a href="https://wa.me/<%= site.whatsapp %>" target="_blank" rel="noopener"><i data-lucide="phone"></i> <%= site.phone %></a></li>
+          <li><span><i data-lucide="clock"></i> <%= site.hours %></span></li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer__bottom">
+      <span>&copy; <span id="year"></span> <%= site.name %>. All rights reserved.</span>
+      <span>Crafted with precision &amp; a little obsession.</span>
+    </div>
+  </div>
+</footer>
