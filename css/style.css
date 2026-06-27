@@ -1779,6 +1779,122 @@ h4 {
   color: var(--faint);
   font-size: 0.85rem;
 }
+.footer__legal {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+.footer__legal a {
+  color: var(--faint);
+  transition: color 0.25s;
+}
+.footer__legal a:hover {
+  color: var(--violet);
+}
+
+/* =====================================================
+   LEGAL PAGES (Privacy / Terms)
+   ===================================================== */
+.legal-body {
+  padding: 56px 48px;
+  max-width: 860px;
+  margin: 0 auto;
+}
+.legal-intro {
+  font-size: 1.05rem;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 40px;
+  padding-bottom: 32px;
+  border-bottom: 1px solid var(--stroke);
+}
+.legal-body h2 {
+  font-size: 1.22rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-top: 40px;
+  margin-bottom: 12px;
+  padding-left: 14px;
+  border-left: 3px solid var(--violet);
+}
+.legal-body p {
+  font-size: 0.97rem;
+  color: var(--muted);
+  line-height: 1.8;
+  margin-bottom: 14px;
+}
+.legal-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 16px;
+  padding-left: 4px;
+}
+.legal-list li {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  font-size: 0.97rem;
+  color: var(--muted);
+  line-height: 1.65;
+}
+.legal-list li::before {
+  content: "";
+  display: inline-block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--violet);
+  margin-top: 9px;
+  flex-shrink: 0;
+}
+.legal-contact {
+  margin-top: 8px;
+  padding: 24px;
+  border-radius: var(--radius);
+  background: var(--grad-soft);
+  border: 1px solid var(--stroke);
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.legal-contact p {
+  margin-bottom: 0;
+  font-size: 0.97rem;
+}
+.legal-contact a {
+  color: var(--violet);
+  font-weight: 500;
+  transition: color 0.2s;
+}
+.legal-contact a:hover {
+  color: var(--magenta);
+}
+.legal-placeholder {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 16px;
+  padding: 40px 0;
+}
+.legal-placeholder > i {
+  width: 56px;
+  height: 56px;
+  color: var(--violet);
+  opacity: 0.7;
+}
+.legal-placeholder h2 {
+  font-size: 1.6rem;
+  border-left: none;
+  padding-left: 0;
+}
+.legal-placeholder p {
+  color: var(--muted);
+  max-width: 380px;
+  margin-bottom: 8px;
+}
 
 /* =====================================================
    BACK TO TOP

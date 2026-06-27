@@ -180,6 +180,14 @@ app.get('/contact', (req, res) => {
   res.render('contact', { ...siteData, activePage: 'contact' });
 });
 
+app.get('/privacy', (req, res) => {
+  res.render('privacy', { ...siteData, activePage: '' });
+});
+
+app.get('/terms', (req, res) => {
+  res.render('terms', { ...siteData, activePage: '' });
+});
+
 // API Routes for forms handling
 app.post('/api/contact', async (req, res) => {
   const { name, email, phone, service, message } = req.body;
