@@ -31,7 +31,6 @@ const siteData = {
     { label: "About", href: "/about", page: "about" },
     { label: "Services", href: "/services", page: "services" },
     { label: "Work", href: "/work", page: "work" },
-    { label: "Blog", href: "/blog", page: "blog" },
     { label: "Contact", href: "/contact", page: "contact" },
   ],
 
