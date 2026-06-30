@@ -22,6 +22,9 @@ app.use('/css', express.static(path.join(__dirname, 'css')));
 app.use('/js', express.static(path.join(__dirname, 'js')));
 app.use('/assets', express.static(path.join(__dirname, 'assets')));
 
+// Serve favicon.ico from root (required by Google for search result favicons)
+app.get('/favicon.ico', (req, res) => res.sendFile(path.join(__dirname, 'favicon.ico')));
+
 // Helper: Get mail transporter (uses custom SMTP or Ethereal test account)
 let cachedTransporter = null;
 async function getTransporter() {
